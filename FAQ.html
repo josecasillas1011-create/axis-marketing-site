@@ -1,0 +1,1924 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- EmailJS SDK — sends lead notifications to the site owner with no backend required -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <title>FAQ — Axis Marketing</title>
+  <meta name="description" content="Frequently asked questions about Axis Marketing's AI-powered digital marketing services, pricing, contracts, and results." />
+  <link rel="icon" type="image/png" href="assets/axis-icon-logo.png" />
+  <meta property="og:title" content="FAQ — Axis Marketing" />
+  <meta property="og:description" content="AI-driven growth systems for dental, fitness, med spa, law, and e-commerce businesses. Get a free strategy session today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/axis-main-logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Axis Marketing — AI-Powered Digital Marketing" />
+  <meta name="twitter:description" content="AI-driven growth systems for dental, fitness, med spa, law, and e-commerce businesses." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & base ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:         #0A1628;
+      --bg-2:       #0F2238;
+      --bg-card:    rgba(20,42,68,0.9);
+      --border:     rgba(166,183,210,0.14);
+      --gold:       #B8962E;
+      --gold-bright:#CCA84A;
+      --text:       #eef5ff;
+      --muted:      #8a9ab2;
+      --green:      #48d48a;
+      --amber:      #ffbe4b;
+      --shadow:     0 24px 70px rgba(0,0,0,0.5);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+      color-scheme: dark;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a  { color: inherit; text-decoration: none; }
+
+    /* ── Typography ─────────────────────────────────────────────── */
+    .eyebrow {
+      color: var(--gold-bright);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    h1 { font-size: clamp(38px, 6vw, 76px); font-weight: 900; line-height: 1.0; }
+    h2 { font-size: clamp(28px, 4vw, 46px); font-weight: 800; line-height: 1.1; }
+    h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+
+    /* ── Layout ─────────────────────────────────────────────────── */
+    .container { margin: 0 auto; max-width: 1160px; padding: 0 24px; }
+    section { position: relative; }
+
+    /* ── Buttons ────────────────────────────────────────────────── */
+    .btn-primary {
+      align-items: center;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 800;
+      gap: 8px;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 28px;
+      text-decoration: none;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-ghost {
+      align-items: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      gap: 8px;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(184,150,46,0.4); }
+
+    /* ── Nav ────────────────────────────────────────────────────── */
+    .nav {
+      backdrop-filter: blur(14px);
+      background: rgba(10,22,40,0.88);
+      border-bottom: 1px solid var(--border);
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      align-items: center;
+      display: flex;
+      gap: 32px;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 1160px;
+      min-height: 68px;
+      padding: 0 24px;
+    }
+    .nav-logo { align-items: center; display: flex; }
+    .nav-logo img { height: 38px; width: auto; display: block; }
+    .nav-links {
+      align-items: center;
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { flex-shrink: 0; }
+
+    /* ── Logo reuse across page ── */
+    .wordmark-img  { display: block; height: auto; width: 100%; }
+    .mark-img      { display: block; border-radius: 12px; }
+    .badge-img     { display: block; }
+
+    /* Hero floating mark */
+    .hero-mark-float {
+      opacity: 0.08;
+      pointer-events: none;
+      position: absolute;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: clamp(280px, 30vw, 420px);
+      z-index: 0;
+    }
+
+    /* Section logo accents */
+    .section-logo-row {
+      align-items: center;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .section-mark {
+      border-radius: 10px;
+      height: 42px;
+      width: 42px;
+      opacity: 0.9;
+    }
+
+    /* CTA band wordmark */
+    .cta-wordmark {
+      display: block;
+      height: 52px;
+      margin: 0 auto 28px;
+      opacity: 0.92;
+      width: auto;
+    }
+
+    /* Steps section mark watermark */
+    .steps-mark-bg {
+      left: 50%;
+      opacity: 0.04;
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(200px, 22vw, 320px);
+      z-index: 0;
+    }
+
+    /* Footer wordmark */
+    .footer-wordmark { height: 46px; width: auto; margin-bottom: 14px; }
+
+    /* Testimonials badge accent */
+    .reviews-badge-row {
+      align-items: center;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .reviews-badge-img { height: 52px; width: 52px; }
+
+    /* ── Hero ───────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      padding: 140px 0 80px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 0;
+    }
+    .hero-bg::before {
+      background: radial-gradient(ellipse at 60% 30%, rgba(184,150,46,0.22) 0%, transparent 55%);
+      content: "";
+      inset: 0;
+      position: absolute;
+    }
+    .hero-bg::after {
+      background: radial-gradient(ellipse at 20% 80%, rgba(204,168,74,0.1) 0%, transparent 45%);
+      content: "";
+      inset: 0;
+      position: absolute;
+    }
+    .hero-grid {
+      align-items: center;
+      display: grid;
+      gap: 60px;
+      grid-template-columns: 1fr 480px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      align-items: center;
+      background: rgba(184,150,46,0.1);
+      border: 1px solid rgba(184,150,46,0.3);
+      border-radius: 999px;
+      color: #E8C870;
+      display: inline-flex;
+      font-size: 12px;
+      font-weight: 700;
+      gap: 8px;
+      margin-bottom: 20px;
+      padding: 6px 14px;
+    }
+    .hero-badge-dot {
+      animation: blink 2s ease-in-out infinite;
+      background: var(--gold-bright);
+      border-radius: 50%;
+      height: 7px;
+      width: 7px;
+    }
+    .hero h1 {
+      margin-bottom: 22px;
+    }
+    .hero h1 .accent { color: var(--gold-bright); }
+    .hero-sub {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+      margin-bottom: 34px;
+      max-width: 520px;
+    }
+    .hero-actions {
+      align-items: center;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-trust {
+      align-items: center;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .trust-item {
+      align-items: center;
+      display: flex;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .trust-check {
+      align-items: center;
+      background: rgba(72,212,138,0.14);
+      border: 1px solid rgba(72,212,138,0.3);
+      border-radius: 50%;
+      color: var(--green);
+      display: flex;
+      font-size: 10px;
+      font-weight: 900;
+      height: 20px;
+      justify-content: center;
+      width: 20px;
+    }
+
+    /* Hero form card */
+    .hero-form-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(184,150,46,0.35);
+      border-radius: 14px;
+      box-shadow: 0 0 60px rgba(184,150,46,0.14), var(--shadow);
+      padding: 32px;
+    }
+    .hero-form-card h3 { font-size: 20px; margin-bottom: 6px; }
+    .hero-form-card p  { color: var(--muted); font-size: 13px; line-height: 1.5; margin-bottom: 22px; }
+    .form-group { margin-bottom: 13px; }
+    .form-group label {
+      color: #cdd8e8;
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(10,22,40,0.72);
+      border: 1px solid rgba(166,183,210,0.18);
+      border-radius: 7px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      padding: 12px 14px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 0 3px rgba(184,150,46,0.14);
+    }
+    .form-group select option { background: #0F2238; }
+    .form-group textarea { min-height: 80px; resize: vertical; }
+    .form-row { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+    .hero-form-card .btn-primary { width: 100%; margin-top: 6px; font-size: 16px; min-height: 54px; }
+    .form-success {
+      align-items: center;
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .form-success-icon { font-size: 48px; }
+    .form-success h3   { font-size: 20px; }
+    .form-success p    { color: var(--muted); font-size: 14px; line-height: 1.55; }
+    .form-error-msg    { color: #D4AA3A; font-size: 12px; margin-top: 8px; display: none; }
+    .privacy-note {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* ── Service checkbox cards ─────────────────────────────────── */
+    .svc-label { color: #cdd8e8; display: block; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+    .svc-grid {
+      display: grid;
+      gap: 7px;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 4px;
+    }
+    .svc-card {
+      align-items: center;
+      background: rgba(10,22,40,0.72);
+      border: 1.5px solid rgba(166,183,210,0.18);
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      font-size: 12px;
+      font-weight: 600;
+      gap: 8px;
+      padding: 10px 12px;
+      transition: border-color 0.15s, background 0.15s;
+      user-select: none;
+    }
+    .svc-card:hover { border-color: rgba(184,150,46,0.4); background: rgba(184,150,46,0.05); }
+    .svc-card.selected {
+      background: rgba(184,150,46,0.12);
+      border-color: var(--gold-bright);
+      color: #fff;
+    }
+    .svc-card .svc-check-box {
+      align-items: center;
+      border: 1.5px solid rgba(166,183,210,0.3);
+      border-radius: 4px;
+      display: flex;
+      flex-shrink: 0;
+      font-size: 10px;
+      height: 16px;
+      justify-content: center;
+      width: 16px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .svc-card.selected .svc-check-box {
+      background: var(--gold-bright);
+      border-color: var(--gold-bright);
+      color: #fff;
+    }
+
+    /* ── Stats bar ──────────────────────────────────────────────── */
+    .stats-bar {
+      background: rgba(20,42,68,0.7);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 0;
+    }
+    .stats-grid {
+      display: grid;
+      gap: 0;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      border-right: 1px solid var(--border);
+      padding: 0 32px;
+      text-align: center;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; padding-right: 0; }
+    .stat-number {
+      color: var(--text);
+      display: block;
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-number span { color: var(--gold-bright); }
+    .stat-label { color: var(--muted); font-size: 13px; font-weight: 500; }
+
+    /* ── Client logo strip ──────────────────────────────────────── */
+    .logo-strip {
+      background: rgba(15,34,56,0.8);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      padding: 22px 0;
+    }
+    .logo-strip-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .logo-track-wrap { overflow: hidden; position: relative; }
+    .logo-track-wrap::before,
+    .logo-track-wrap::after {
+      content: "";
+      height: 100%;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      width: 80px;
+      z-index: 2;
+    }
+    .logo-track-wrap::before { background: linear-gradient(to right, rgba(15,34,56,1), transparent); left: 0; }
+    .logo-track-wrap::after  { background: linear-gradient(to left, rgba(15,34,56,1), transparent); right: 0; }
+    .logo-track {
+      animation: scrollLogos 28s linear infinite;
+      display: flex;
+      gap: 60px;
+      width: max-content;
+    }
+    .logo-track:hover { animation-play-state: paused; }
+    .logo-item {
+      align-items: center;
+      color: rgba(166,183,210,0.4);
+      display: flex;
+      font-size: 15px;
+      font-weight: 800;
+      gap: 8px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .logo-item .logo-dot {
+      background: var(--gold);
+      border-radius: 50%;
+      height: 6px;
+      opacity: 0.6;
+      width: 6px;
+    }
+    @keyframes scrollLogos {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── Section shells ─────────────────────────────────────────── */
+    .section-pad { padding: 96px 0; }
+    .section-header { margin-bottom: 56px; text-align: center; }
+    .section-header p { color: var(--muted); font-size: 17px; line-height: 1.65; margin: 14px auto 0; max-width: 560px; }
+
+    /* ── Services ───────────────────────────────────────────────── */
+    .services-bg {
+      background:
+        radial-gradient(ellipse at 80% 50%, rgba(184,150,46,0.09) 0%, transparent 50%),
+        var(--bg-2);
+    }
+    .services-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .service-card:hover {
+      border-color: rgba(184,150,46,0.45);
+      transform: translateY(-3px);
+    }
+    .service-icon {
+      align-items: center;
+      background: rgba(184,150,46,0.12);
+      border: 1px solid rgba(184,150,46,0.25);
+      border-radius: 10px;
+      color: #D4AA3A;
+      display: flex;
+      font-size: 22px;
+      height: 52px;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 52px;
+    }
+    .service-card h3 { font-size: 17px; margin-bottom: 10px; }
+    .service-card p  { color: var(--muted); font-size: 14px; line-height: 1.6; margin-bottom: 0; }
+    .service-results {
+      align-items: center;
+      display: flex;
+      gap: 6px;
+      margin-top: 14px;
+    }
+    .result-pill {
+      background: rgba(72,212,138,0.1);
+      border: 1px solid rgba(72,212,138,0.24);
+      border-radius: 999px;
+      color: #79f5ad;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+    }
+
+    /* ── How it works ───────────────────────────────────────────── */
+    .steps-grid {
+      display: grid;
+      gap: 0;
+      grid-template-columns: repeat(3, 1fr);
+      position: relative;
+    }
+    .steps-grid::before {
+      background: linear-gradient(90deg, transparent, rgba(184,150,46,0.3), transparent);
+      content: "";
+      height: 1px;
+      left: 16%;
+      position: absolute;
+      right: 16%;
+      top: 32px;
+    }
+    .step {
+      padding: 0 32px;
+      text-align: center;
+    }
+    .step-number {
+      align-items: center;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      border-radius: 50%;
+      color: #fff;
+      display: inline-flex;
+      font-size: 18px;
+      font-weight: 900;
+      height: 64px;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: relative;
+      width: 64px;
+      z-index: 1;
+    }
+    .step h3 { font-size: 18px; margin-bottom: 10px; }
+    .step p   { color: var(--muted); font-size: 14px; line-height: 1.65; }
+
+    /* ── Why Axis Marketing (differentiators) ────────────────────────── */
+    .why-bg {
+      background: radial-gradient(ellipse at 30% 60%, rgba(184,150,46,0.08) 0%, transparent 55%), var(--bg-2);
+    }
+    .why-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .why-card {
+      align-items: flex-start;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      gap: 18px;
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .why-card:hover { border-color: rgba(184,150,46,0.4); }
+    .why-icon {
+      background: rgba(184,150,46,0.1);
+      border: 1px solid rgba(184,150,46,0.22);
+      border-radius: 10px;
+      color: #D4AA3A;
+      flex-shrink: 0;
+      font-size: 20px;
+      height: 46px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      width: 46px;
+    }
+    .why-card h3 { font-size: 16px; }
+    .why-card p  { color: var(--muted); font-size: 13px; line-height: 1.6; margin: 0; }
+
+    /* ── Social proof ───────────────────────────────────────────── */
+    .reviews-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .stars { color: var(--amber); font-size: 14px; letter-spacing: 2px; margin-bottom: 12px; }
+    .review-card p { color: #d0dcea; font-size: 14px; line-height: 1.65; margin-bottom: 18px; font-style: italic; }
+    .reviewer {
+      align-items: center;
+      display: flex;
+      gap: 12px;
+    }
+    .reviewer-avatar {
+      align-items: center;
+      background: rgba(184,150,46,0.18);
+      border-radius: 50%;
+      color: #E8C870;
+      display: flex;
+      flex-shrink: 0;
+      font-size: 13px;
+      font-weight: 800;
+      height: 38px;
+      justify-content: center;
+      width: 38px;
+    }
+    .reviewer strong { display: block; font-size: 13px; }
+    .reviewer span   { color: var(--muted); font-size: 12px; }
+    .result-badge {
+      background: rgba(72,212,138,0.1);
+      border: 1px solid rgba(72,212,138,0.24);
+      border-radius: 999px;
+      color: #79f5ad;
+      font-size: 11px;
+      font-weight: 700;
+      margin-left: auto;
+      padding: 3px 9px;
+      white-space: nowrap;
+    }
+
+    /* ── Interactive Tools ──────────────────────────────────────── */
+    .tools-section {
+      background: radial-gradient(ellipse at 70% 40%, rgba(184,150,46,0.07) 0%, transparent 55%), var(--bg);
+      padding: 80px 0;
+    }
+    .tools-tabs {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .tools-tab {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--muted);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 20px;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .tools-tab:hover { color: var(--text); border-color: rgba(184,150,46,0.3); }
+    .tools-tab.active {
+      background: rgba(184,150,46,0.12);
+      border-color: var(--gold-bright);
+      color: #fff;
+    }
+    .tools-panel { display: none; }
+    .tools-panel.active { display: block; }
+    .tool-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin: 0 auto;
+      max-width: 680px;
+      padding: 36px;
+    }
+    .tool-card h3 { font-size: 22px; margin-bottom: 6px; }
+    .tool-card > p { color: var(--muted); font-size: 14px; line-height: 1.6; margin-bottom: 28px; }
+    .tool-field { margin-bottom: 16px; }
+    .tool-field label {
+      color: #cdd8e8;
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .tool-field input,
+    .tool-field select {
+      background: rgba(10,22,40,0.72);
+      border: 1px solid rgba(166,183,210,0.18);
+      border-radius: 7px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      padding: 11px 14px;
+      transition: border-color 0.15s;
+      width: 100%;
+    }
+    .tool-field input:focus,
+    .tool-field select:focus { border-color: var(--gold-bright); }
+    .tool-field select option { background: #0F2238; }
+    .tool-2col { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+    .tool-result {
+      background: rgba(72,212,138,0.07);
+      border: 1px solid rgba(72,212,138,0.22);
+      border-radius: 10px;
+      display: none;
+      margin-top: 22px;
+      padding: 20px 24px;
+    }
+    .tool-result.visible { display: block; }
+    .tool-result-label { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+    .tool-result-value { color: #79f5ad; font-size: 32px; font-weight: 900; line-height: 1; }
+    .tool-result-sub   { color: var(--muted); font-size: 13px; margin-top: 6px; }
+    .tool-result-grid  { display: grid; gap: 14px; grid-template-columns: 1fr 1fr 1fr; margin-top: 0; }
+    .quiz-question { margin-bottom: 22px; }
+    .quiz-question p { font-size: 15px; font-weight: 600; margin-bottom: 12px; }
+    .quiz-options { display: grid; gap: 8px; grid-template-columns: 1fr 1fr; }
+    .quiz-opt {
+      background: rgba(10,22,40,0.72);
+      border: 1.5px solid rgba(166,183,210,0.18);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 11px 14px;
+      text-align: left;
+      transition: border-color 0.15s, background 0.15s;
+      width: 100%;
+      font-family: inherit;
+      color: var(--text);
+    }
+    .quiz-opt:hover { border-color: rgba(184,150,46,0.4); background: rgba(184,150,46,0.05); }
+    .quiz-opt.selected { border-color: var(--gold-bright); background: rgba(184,150,46,0.12); }
+    .quiz-score-ring {
+      --pct: 0%;
+      align-items: center;
+      background: conic-gradient(var(--gold-bright) var(--pct), rgba(255,255,255,0.07) 0%);
+      border-radius: 50%;
+      display: inline-flex;
+      flex-direction: column;
+      height: 120px;
+      justify-content: center;
+      margin-bottom: 8px;
+      width: 120px;
+      position: relative;
+    }
+    .quiz-score-ring::before {
+      background: var(--bg-card);
+      border-radius: 50%;
+      content: "";
+      height: 90px;
+      position: absolute;
+      width: 90px;
+    }
+    .quiz-score-num { font-size: 28px; font-weight: 900; position: relative; z-index: 1; }
+    .quiz-score-lbl { color: var(--muted); font-size: 11px; font-weight: 700; position: relative; text-transform: uppercase; z-index: 1; }
+
+    /* ── FAQ ────────────────────────────────────────────────────── */
+    .faq-section { padding: 80px 0; }
+    .faq-list { max-width: 720px; margin: 0 auto; display: grid; gap: 10px; }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: rgba(184,150,46,0.35); }
+    .faq-q {
+      align-items: center;
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      gap: 14px;
+      justify-content: space-between;
+      padding: 18px 22px;
+      text-align: left;
+      width: 100%;
+    }
+    .faq-q:hover { color: #fff; }
+    .faq-chevron {
+      color: var(--gold-bright);
+      flex-shrink: 0;
+      font-size: 18px;
+      transition: transform 0.25s;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-a {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 22px;
+      transition: max-height 0.35s ease, padding 0.25s;
+    }
+    .faq-item.open .faq-a {
+      max-height: 260px;
+      padding: 0 22px 18px;
+    }
+
+    /* ── Bottom CTA band ────────────────────────────────────────── */
+    .cta-band {
+      background: linear-gradient(135deg, rgba(184,150,46,0.18), rgba(184,150,46,0.06));
+      border-top: 1px solid rgba(184,150,46,0.25);
+      border-bottom: 1px solid rgba(184,150,46,0.25);
+      padding: 72px 0;
+      text-align: center;
+    }
+    .cta-band h2    { margin-bottom: 14px; }
+    .cta-band p     { color: var(--muted); font-size: 17px; line-height: 1.6; margin: 0 auto 34px; max-width: 520px; }
+    .cta-actions    { align-items: center; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Footer ─────────────────────────────────────────────────── */
+    footer {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      padding: 48px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      gap: 40px;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      margin-bottom: 40px;
+    }
+    .footer-brand p { color: var(--muted); font-size: 13px; line-height: 1.65; margin-top: 14px; max-width: 260px; }
+    .footer-social { display: flex; gap: 10px; margin-top: 18px; }
+    .footer-social-link {
+      align-items: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--muted);
+      display: flex;
+      height: 36px;
+      justify-content: center;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      width: 36px;
+    }
+    .footer-social-link:hover { background: rgba(184,150,46,0.12); border-color: rgba(184,150,46,0.35); color: var(--gold-bright); }
+    .footer-col h4  { font-size: 13px; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 14px; text-transform: uppercase; color: var(--muted); }
+    .footer-col ul  { list-style: none; display: grid; gap: 9px; }
+    .footer-col a   { color: var(--muted); font-size: 13px; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--text); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      display: flex;
+      font-size: 12px;
+      gap: 20px;
+      justify-content: space-between;
+      padding-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Visitor badge ──────────────────────────────────────────── */
+    .visitor-badge {
+      align-items: center;
+      animation: floatUp 0.6s ease-out forwards;
+      background: rgba(20,42,68,0.94);
+      border: 1px solid rgba(184,150,46,0.3);
+      border-radius: 999px;
+      bottom: 80px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      display: flex;
+      font-size: 12px;
+      font-weight: 700;
+      gap: 8px;
+      left: 20px;
+      opacity: 0;
+      padding: 8px 16px;
+      position: fixed;
+      z-index: 200;
+    }
+    .vb-dot {
+      animation: blink 1.5s ease-in-out infinite;
+      background: var(--gold-bright);
+      border-radius: 50%;
+      height: 7px;
+      width: 7px;
+    }
+    .vb-text { color: #e0eaff; }
+
+    /* ── Scroll-to-top ──────────────────────────────────────────── */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 96px;
+      right: 24px;
+      z-index: 900;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--surface-2, #142A44);
+      border: 1px solid rgba(166,183,210,0.18);
+      color: var(--text, #eef5ff);
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      transform: translateY(8px);
+    }
+    .scroll-top-btn.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .scroll-top-btn:hover { background: #8B6B15; border-color: #8B6B15; }
+
+    /* ── Chatbot ────────────────────────────────────────────────── */
+    .chat-bubble {
+      align-items: center;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      border: none;
+      border-radius: 50%;
+      bottom: 22px;
+      box-shadow: 0 4px 24px rgba(184,150,46,0.45);
+      cursor: pointer;
+      display: flex;
+      font-size: 22px;
+      height: 58px;
+      justify-content: center;
+      position: fixed;
+      right: 22px;
+      width: 58px;
+      z-index: 300;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .chat-bubble:hover { transform: scale(1.08); box-shadow: 0 6px 30px rgba(184,150,46,0.55); }
+    .chat-panel {
+      background: var(--bg-card);
+      border: 1px solid rgba(184,150,46,0.3);
+      border-radius: 16px;
+      bottom: 92px;
+      box-shadow: 0 16px 60px rgba(0,0,0,0.55);
+      display: flex;
+      flex-direction: column;
+      max-height: 520px;
+      overflow: hidden;
+      position: fixed;
+      right: 22px;
+      transform: scale(0.92) translateY(12px);
+      transform-origin: bottom right;
+      transition: opacity 0.2s, transform 0.2s;
+      opacity: 0;
+      pointer-events: none;
+      width: 340px;
+      z-index: 299;
+    }
+    .chat-panel.open { opacity: 1; pointer-events: auto; transform: scale(1) translateY(0); }
+    .chat-header {
+      align-items: center;
+      background: linear-gradient(135deg, rgba(184,150,46,0.18), rgba(184,150,46,0.06));
+      border-bottom: 1px solid rgba(184,150,46,0.22);
+      display: flex;
+      gap: 10px;
+      padding: 14px 16px;
+    }
+    .chat-header img { border-radius: 7px; height: 28px; width: 28px; }
+    .chat-header-text strong { display: block; font-size: 14px; }
+    .chat-header-text span   { color: var(--green); font-size: 11px; font-weight: 600; }
+    .chat-header-close {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 18px;
+      margin-left: auto;
+      padding: 2px 6px;
+    }
+    .chat-msgs {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      scroll-behavior: smooth;
+    }
+    .chat-msgs::-webkit-scrollbar { width: 4px; }
+    .chat-msgs::-webkit-scrollbar-track { background: transparent; }
+    .chat-msgs::-webkit-scrollbar-thumb { background: rgba(166,183,210,0.2); border-radius: 2px; }
+    .chat-msg {
+      font-size: 13px;
+      line-height: 1.55;
+      max-width: 85%;
+    }
+    .chat-msg.bot {
+      align-self: flex-start;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 12px 12px 12px 2px;
+      color: var(--text);
+      padding: 10px 13px;
+    }
+    .chat-msg.user {
+      align-self: flex-end;
+      background: rgba(184,150,46,0.18);
+      border: 1px solid rgba(184,150,46,0.3);
+      border-radius: 12px 12px 2px 12px;
+      color: #fff;
+      padding: 10px 13px;
+    }
+    .chat-input-row {
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+    }
+    .chat-input {
+      background: rgba(10,22,40,0.72);
+      border: 1px solid rgba(166,183,210,0.18);
+      border-radius: 8px;
+      color: var(--text);
+      flex: 1;
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+      padding: 10px 12px;
+      transition: border-color 0.15s;
+    }
+    .chat-input:focus { border-color: var(--gold-bright); }
+    .chat-send {
+      align-items: center;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      font-size: 14px;
+      height: 38px;
+      justify-content: center;
+      width: 38px;
+    }
+    .chat-opts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 0 12px 12px;
+    }
+    .chat-opt {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .chat-opt:hover { background: rgba(184,150,46,0.12); border-color: rgba(184,150,46,0.4); }
+    .chat-typing {
+      align-self: flex-start;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 12px 12px 12px 2px;
+      padding: 10px 14px;
+    }
+    .chat-typing span {
+      animation: chatDot 1.2s ease-in-out infinite;
+      background: var(--muted);
+      border-radius: 50%;
+      display: inline-block;
+      height: 6px;
+      margin: 0 2px;
+      width: 6px;
+    }
+    .chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes chatDot { 0%,80%,100%{transform:translateY(0);opacity:.4} 40%{transform:translateY(-5px);opacity:1} }
+
+    /* ── Animations ─────────────────────────────────────────────── */
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    @keyframes floatUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in { animation: floatUp 0.6s ease-out forwards; opacity: 0; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+
+    /* ── Hamburger nav ──────────────────────────────────────────── */
+    .nav-hamburger {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--text);
+      cursor: pointer;
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      height: 38px;
+      justify-content: center;
+      padding: 0 10px;
+      width: 42px;
+    }
+    .nav-hamburger span {
+      background: var(--text);
+      border-radius: 2px;
+      display: block;
+      height: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+      width: 20px;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-menu {
+      background: rgba(10,22,40,0.98);
+      border-bottom: 1px solid var(--border);
+      display: none;
+      left: 0;
+      padding: 16px 24px 20px;
+      position: fixed;
+      right: 0;
+      top: 68px;
+      z-index: 99;
+    }
+    .nav-mobile-menu.open { display: block; }
+    .nav-mobile-menu ul { list-style: none; display: grid; gap: 4px; }
+    .nav-mobile-menu a {
+      color: var(--text);
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(166,183,210,0.08);
+    }
+    .nav-mobile-menu .btn-primary {
+      margin-top: 14px;
+      width: 100%;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    /* ── Tablet ─────────────────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .hero-grid { grid-template-columns: 1fr 420px; gap: 40px; }
+    }
+
+    /* ── Mobile ─────────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-grid    { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid{ grid-template-columns: 1fr 1fr; }
+      .steps-grid   { grid-template-columns: 1fr; gap: 40px; }
+      .steps-grid::before { display: none; }
+      .why-grid     { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-grid  { grid-template-columns: 1fr 1fr; }
+      .stats-grid   { grid-template-columns: repeat(2,1fr); gap: 24px; }
+      .stat-item    { border-right: none; padding: 0; }
+      .nav-links    { display: none; }
+      .nav-cta      { display: none; }
+      .nav-hamburger{ display: flex; }
+      .tool-2col    { grid-template-columns: 1fr; }
+      .tool-result-grid { grid-template-columns: 1fr; }
+      .quiz-options { grid-template-columns: 1fr; }
+      .section-pad  { padding: 64px 0; }
+      .tools-tabs   { overflow-x: auto; justify-content: flex-start; padding-bottom: 4px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+      .tools-tab    { flex-shrink: 0; }
+      .tool-card    { padding: 24px 20px; }
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: clamp(30px, 9vw, 48px); }
+      h2 { font-size: clamp(24px, 7vw, 38px); }
+      .form-row        { grid-template-columns: 1fr; }
+      .footer-grid     { grid-template-columns: 1fr; }
+      .hero-form-card  { padding: 20px 16px; }
+      .hero            { padding: 110px 0 52px; }
+      .svc-grid        { grid-template-columns: 1fr; }
+      .services-grid   { grid-template-columns: 1fr; }
+      .chat-panel      { width: min(340px, calc(100vw - 28px)); right: 14px; bottom: 82px; }
+      .visitor-badge   { display: none; }
+      .stats-grid      { grid-template-columns: 1fr 1fr; }
+      .section-pad     { padding: 52px 0; }
+      .cta-band        { padding: 52px 0; }
+      .hero-trust      { gap: 12px; }
+      .faq-section     { padding: 52px 0; }
+      .tools-section   { padding: 52px 0; }
+      .reviews-grid    { grid-template-columns: 1fr; }
+      .why-grid        { grid-template-columns: 1fr; }
+      .step            { padding: 0 12px; }
+      .tool-card       { padding: 20px 14px; }
+      .container       { padding: 0 16px; }
+    }
+    @media (max-width: 400px) {
+      .hero-badge      { font-size: 10px; padding: 5px 10px; }
+      .hero-actions    { flex-direction: column; }
+      .hero-actions .btn-ghost { width: 100%; justify-content: center; }
+      .stats-grid      { grid-template-columns: 1fr; }
+      .stat-item       { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ── Navigation ── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="Landing Page.html" class="nav-logo">
+        <img src="assets/axis-main-logo-white.png"
+             alt="Axis Marketing — Next Gen Progression"
+             height="38" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="Landing Page.html#services">Services</a></li>
+        <li><a href="Landing Page.html#how-it-works">How It Works</a></li>
+        <li><a href="Landing Page.html#results">Results</a></li>
+        <li><a href="Free Tools.html">Free Tools</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Landing Page.html#contact">Contact</a></li>
+      </ul>
+      <a href="Landing Page.html#contact" class="btn-primary nav-cta" style="min-height:40px;font-size:13px;padding:0 18px">
+        Free Strategy Session →
+      </a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── Mobile nav menu ── -->
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <ul>
+      <li><a href="Landing Page.html#services">Services</a></li>
+      <li><a href="Landing Page.html#how-it-works">How It Works</a></li>
+      <li><a href="Landing Page.html#results">Results</a></li>
+      <li><a href="Free Tools.html">Free Tools</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+      <li><a href="Landing Page.html#contact">Contact</a></li>
+    </ul>
+    <a href="Landing Page.html#contact" class="btn-primary">Get My Free Strategy Session →</a>
+  </div>
+
+
+  <div style="height:68px"></div>
+<!-- ── FAQ ── -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">FAQ</p>
+        <h2>Common Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">How quickly will I see results? <span class="faq-chevron">▾</span></button>
+          <div class="faq-a">Most clients see measurable improvements in the first 30 days. Paid ad campaigns go live within 5–7 business days of onboarding. SEO is a longer game — you'll start seeing ranking movement in 60–90 days, with compounding returns after that. We focus on quick-win channels first so revenue starts flowing while the long-term systems build.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you require long-term contracts? <span class="faq-chevron">▾</span></button>
+          <div class="faq-a">No. We start every client on a month-to-month agreement. That said, most clients stay because they're seeing results — not because they're locked in. If you want to commit to 3 or 6 months, we offer discounted rates in exchange for the runway. Either way, the choice is yours.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What's the minimum monthly budget to work with Axis Marketing? <span class="faq-chevron">▾</span></button>
+          <div class="faq-a">Our management services start at around $1,500/mo. On top of that, you'll have your media spend (what you pay Meta, Google, TikTok directly). We recommend a minimum of $1,000/mo in ad spend to generate meaningful test data. Clients spending $3,000–$5,000+/mo in ad spend typically see the best ROAS lift from our optimization systems.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What makes Axis Marketing different from other agencies? <span class="faq-chevron">▾</span></button>
+          <div class="faq-a">Three things: attribution, automation, and AI. Most agencies run your ads and send a report. We build a connected system — ads, CRM, email, SMS, calendar, and reporting — so every dollar is tracked from click to close. Our AI agents run competitor analysis, qualify leads by intent score, and trigger upsell proposals automatically. You get growth infrastructure, not just ad management.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Will I own my ad accounts and data? <span class="faq-chevron">▾</span></button>
+          <div class="faq-a">Always. Your ad accounts, pixels, audiences, and CRM data belong to you. We operate inside your accounts, not ours. If we ever part ways, you keep everything — the campaigns, the audience data, the creatives, the attribution history. No hostage data.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you work with businesses outside the US? <span class="faq-chevron">▾</span></button>
+          <div class="faq-a">Yes. We work with English-speaking markets across the US, Canada, UK, and Australia. Our paid ads team has run campaigns in all major Meta and Google markets. If you're outside those regions, reach out anyway — we evaluate international clients on a case-by-case basis.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is AI Search Visibility (GEO/AEO) and do I need it? <span class="faq-chevron">▾</span></button>
+          <div class="faq-a">GEO (Generative Engine Optimization) and AEO (Answer Engine Optimization) are the emerging discipline of getting your brand cited and recommended by AI tools like ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot. When someone asks an AI "who's the best dental practice in Riverside?" — you want to be the answer it gives. Traditional SEO gets you ranked on Google's blue links. GEO/AEO gets you into AI-generated answers, which are increasingly where high-intent searchers are looking. It's not replacing SEO yet, but businesses that start building AI authority now will have a significant advantage in 12–18 months. We offer it as a standalone service or bundled with SEO.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">I'm not ready to start yet — can I still get a free audit? <span class="faq-chevron">▾</span></button>
+          <div class="faq-a">Absolutely. The free growth audit is zero-commitment — it's designed to give you a clear picture of what's working, what's leaking revenue, and what your best growth opportunity is right now. There's no sales pressure and no obligation to become a client. A lot of businesses use it as a second opinion before making any marketing decisions. The sooner you have that data, the better positioned you are — whether you start with us in a week or six months from now.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Band ── -->
+  <section class="cta-band">
+    <div class="container">
+      <img src="assets/axis-main-logo-white.png"
+           alt="Axis Marketing — Next Gen Progression"
+           class="cta-wordmark" />
+      <p class="eyebrow" style="text-align:center">Ready to grow?</p>
+      <h2>Your Competition Is Running Ads<br>Right Now. Are You?</h2>
+      <p>Every day without a growth system is revenue left on the table. Get your free strategy session and see exactly what we'd do in your market.</p>
+      <div class="cta-actions">
+        <a href="Landing Page.html#contact" class="btn-primary" style="font-size:17px;min-height:58px;padding:0 36px">
+          Get My Free Strategy Session →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/axis-main-logo-white.png"
+               alt="Axis Marketing — Next Gen Progression"
+               class="footer-wordmark" />
+          <p>AI-powered digital marketing growth systems for businesses ready to scale. Full attribution, automated outreach, and real revenue results.</p>
+          <!-- Social links — replace href values with real profile URLs -->
+          <div class="footer-social">
+            <a href="https://instagram.com/axismarketing" target="_blank" rel="noopener" aria-label="Axis Marketing on Instagram" class="footer-social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://facebook.com/axismarketing" target="_blank" rel="noopener" aria-label="Axis Marketing on Facebook" class="footer-social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://linkedin.com/company/axismarketing" target="_blank" rel="noopener" aria-label="Axis Marketing on LinkedIn" class="footer-social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://tiktok.com/@axismarketing" target="_blank" rel="noopener" aria-label="Axis Marketing on TikTok" class="footer-social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="Landing Page.html#services">Paid Advertising</a></li>
+            <li><a href="Landing Page.html#services">SEO &amp; Local Search</a></li>
+            <li><a href="Landing Page.html#services">Social Media</a></li>
+            <li><a href="Landing Page.html#services">Email &amp; SMS</a></li>
+            <li><a href="Landing Page.html#services">Web Design</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="Landing Page.html#how-it-works">How It Works</a></li>
+            <li><a href="Landing Page.html#results">Case Studies</a></li>
+            <li><a href="FAQ.html">FAQ</a></li>
+            <li><a href="Landing Page.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="../01 - Dashboard App/index.html" target="_blank">CRM Dashboard</a></li>
+            <li><a href="Landing Page.html#contact">Client Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Axis Marketing — Next Gen Progression. All rights reserved.</span>
+        <a href="Privacy Policy.html">Privacy Policy</a> · <a href="Terms of Service.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Visitor Badge ── -->
+  <div class="visitor-badge" id="visitorBadge" style="animation-delay:2s">
+    <span class="vb-dot"></span>
+    <span class="vb-text" id="vbText">14 people viewing this page</span>
+  </div>
+
+  <!-- ── Chatbot ── -->
+  <!-- Scroll to top -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Back to top" title="Back to top">↑</button>
+
+  <button class="chat-bubble" id="chatBubble" aria-label="Chat with Axis Marketing">💬</button>
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Axis Marketing Growth Chat">
+    <div class="chat-header">
+      <img src="assets/axis-icon-logo-white.png" alt="Axis Marketing" />
+      <div class="chat-header-text">
+        <strong>Axis Marketing Growth Chat</strong>
+        <span>● Online</span>
+      </div>
+      <button class="chat-header-close" id="chatClose" aria-label="Close chat">✕</button>
+    </div>
+    <div class="chat-msgs" id="chatMsgs"></div>
+    <div class="chat-opts" id="chatOpts"></div>
+    <div class="chat-input-row" id="chatInputRow" style="display:none">
+      <input class="chat-input" id="chatInput" placeholder="Type here…" />
+      <button class="chat-send" id="chatSendBtn" aria-label="Send">→</button>
+    </div>
+  </div>
+
+  <!-- ── Scripts ── -->
+  <script>
+    /* ────────────────────────────────────────────────────────────────
+       CRM bridge helpers
+    ──────────────────────────────────────────────────────────────── */
+    /* ════════════════════════════════════════════════════════════════
+       EMAILJS CONFIGURATION — 3 steps to activate lead email alerts
+       ════════════════════════════════════════════════════════════════
+       STEP 1 — Create a free account at https://www.emailjs.com
+                 (free tier = 200 emails/month, no backend needed)
+
+       STEP 2 — In the EmailJS dashboard:
+                 a) Email Services  → Add Service → connect your Gmail/Outlook
+                    → copy the Service ID  → replace YOUR_SERVICE_ID below
+                 b) Email Templates → Create Template → use these variables:
+                      {{lead_name}}, {{lead_company}}, {{lead_email}},
+                      {{lead_phone}}, {{lead_services}}, {{lead_budget}},
+                      {{lead_goal}}
+                    → copy the Template ID → replace YOUR_TEMPLATE_ID below
+                 c) Account → API Keys → copy Public Key
+                    → replace YOUR_EMAILJS_PUBLIC_KEY below
+
+       STEP 3 — Save the file. Every new form/chat submission will now
+                 send a real email to whatever address your template uses.
+       ════════════════════════════════════════════════════════════════ */
+    const EMAILJS_PUBLIC_KEY  = "YOUR_EMAILJS_PUBLIC_KEY";  // Account → API Keys
+    const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";          // Email Services
+    const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";         // Email Templates
+
+    // Initialise EmailJS once (safe to call even if keys aren't set yet)
+    try { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); } catch(e) {}
+
+    function sendLeadEmail({ firstName, lastName, company, email, phone, service, budget, goal }) {
+      try {
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+          lead_name:     (firstName + " " + lastName).trim(),
+          lead_company:  company  || "—",
+          lead_email:    email    || "—",
+          lead_phone:    phone    || "—",
+          lead_services: service  || "—",
+          lead_budget:   budget   || "—",
+          lead_goal:     goal     || "—"
+        });
+      } catch(e) {
+        // EmailJS is optional — form/chat still works if keys aren't configured
+      }
+    }
+
+    const CRM_STORAGE_KEY = "axismarketing-crm-v3";
+
+    function uid() { return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)); }
+    function getState() {
+      const raw = localStorage.getItem(CRM_STORAGE_KEY);
+      if (!raw) return null;
+      try { return JSON.parse(raw); } catch { return null; }
+    }
+
+    function pushToCRM({ firstName, lastName, company, email, phone, service, budget, goal }) {
+      const state = getState();
+      if (!state) {
+        const queue = JSON.parse(localStorage.getItem("axismarketing-lead-queue") || "[]");
+        queue.push({ firstName, lastName, company, email, phone, service, budget, goal, ts: new Date().toISOString() });
+        localStorage.setItem("axismarketing-lead-queue", JSON.stringify(queue));
+        return;
+      }
+      const fullName  = (firstName + " " + lastName).trim();
+      const now       = new Date().toISOString();
+      const serviceMap = {
+        "Paid Ads (Meta / Google / TikTok)":    "Paid Ads",
+        "SEO & Local Search":                   "SEO",
+        "Social Media Management":              "Social Media",
+        "Email Marketing & Automation":         "Email Marketing",
+        "Website Design & CRO":                "Web Design",
+        "Brand Strategy":                      "Brand Strategy",
+        "Full-Service Growth Package":          "Full Service",
+        "AI Search Visibility (GEO/AEO)":      "GEO/AEO"
+      };
+      const crmService = serviceMap[service] || service;
+      const newLead = { id: uid(), name: fullName, company, service: crmService, source: "Landing Page", status: "New", owner: ["Avery","Noah","Mia"][state.leads.length % 3], intentScore: 72, ltv: 0, cac: 0, growthSignal: budget ? "Budget: " + budget : null };
+      const newContact = { id: uid(), name: fullName, company, email, phone, source: "Landing Page", tags: ["Landing Page", crmService], status: "New", owner: newLead.owner, intentScore: 72, ltv: 0, cac: 0, growthSignal: budget ? "Budget: " + budget : null, notes: [goal ? "Goal: " + goal : "", budget ? "Budget: " + budget : "", "Service interest: " + service].filter(Boolean).join(" | "), lastActivity: now };
+      const newNotif = { id: uid(), title: "🎯 New landing page lead", body: fullName + " — " + company + " (" + service + ")", ts: now };
+      state.leads.unshift(newLead);
+      state.contacts.unshift(newContact);
+      state.notifications.unshift(newNotif);
+      if (state.notifications.length > 30) state.notifications.pop();
+      localStorage.setItem(CRM_STORAGE_KEY, JSON.stringify(state));
+    }
+
+    /* ────────────────────────────────────────────────────────────────
+       Service checkbox cards
+    ──────────────────────────────────────────────────────────────── */
+    const svcCards = document.querySelectorAll(".svc-card");
+    svcCards.forEach(card => {
+      card.addEventListener("click", () => {
+        card.classList.toggle("selected");
+        card.querySelector(".svc-check-box").textContent = card.classList.contains("selected") ? "✓" : "";
+      });
+    });
+    function getSelectedServices() {
+      return [...document.querySelectorAll(".svc-card.selected")].map(c => c.dataset.svc);
+    }
+
+    /* ────────────────────────────────────────────────────────────────
+       Lead form
+    ──────────────────────────────────────────────────────────────── */
+    const form        = document.getElementById("leadForm");
+    const formSuccess = document.getElementById("formSuccess");
+    const formError   = document.getElementById("formError");
+    const svcError    = document.getElementById("svcError");
+
+    if (form) form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      formError.style.display = "none";
+      svcError.style.display  = "none";
+
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName  = document.getElementById("lastName").value.trim();
+      const company   = document.getElementById("company").value.trim();
+      const email     = document.getElementById("email").value.trim();
+      const phone     = document.getElementById("phone").value.trim();
+      const services  = getSelectedServices();
+
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      const phoneValid = /^[\d\s\-\+\(\)\.]{7,20}$/.test(phone);
+      if (!firstName || !lastName || !company || !email || !phone || !emailValid || !phoneValid) {
+        formError.style.display = "block";
+        return;
+      }
+      if (services.length === 0) {
+        svcError.style.display = "block";
+        document.getElementById("serviceGroup").scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+
+      const budget  = document.getElementById("budget").value;
+      const goal    = document.getElementById("goal").value.trim();
+      const service = services.join(", ");
+
+      pushToCRM({ firstName, lastName, company, email, phone, service, budget, goal });
+      sendLeadEmail({ firstName, lastName, company, email, phone, service, budget, goal });
+
+      form.style.display        = "none";
+      formSuccess.style.display = "flex";
+      formSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    /* ────────────────────────────────────────────────────────────────
+       Hamburger menu
+    ──────────────────────────────────────────────────────────────── */
+    (function() {
+      const btn  = document.getElementById("navHamburger");
+      const menu = document.getElementById("navMobileMenu");
+      btn.addEventListener("click", () => {
+        const open = menu.classList.toggle("open");
+        btn.classList.toggle("open", open);
+      });
+      // close on any link click
+      menu.querySelectorAll("a").forEach(a => {
+        a.addEventListener("click", () => {
+          menu.classList.remove("open");
+          btn.classList.remove("open");
+        });
+      });
+    })();
+
+    /* ────────────────────────────────────────────────────────────────
+       Smooth scroll
+    ──────────────────────────────────────────────────────────────── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener("click", e => {
+        const target = document.querySelector(a.getAttribute("href"));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth" }); }
+      });
+    });
+
+    /* ────────────────────────────────────────────────────────────────
+       Visitor badge
+    ──────────────────────────────────────────────────────────────── */
+    (function() {
+      let count = Math.floor(Math.random() * 10) + 9; // 9-18
+      const txt = document.getElementById("vbText");
+      function update() {
+        const delta = Math.random() > 0.5 ? 1 : -1;
+        count = Math.max(6, Math.min(28, count + delta));
+        txt.textContent = count + " people viewing this page";
+      }
+      setInterval(update, 4500 + Math.random() * 3000);
+    })();
+
+    /* ────────────────────────────────────────────────────────────────
+       Tools tabs
+    ──────────────────────────────────────────────────────────────── */
+    document.querySelectorAll(".tools-tab").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tools-tab").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".tools-panel").forEach(p => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("tab-" + btn.dataset.tab).classList.add("active");
+      });
+    });
+
+    /* ────────────────────────────────────────────────────────────────
+       ROI Calculator
+    ──────────────────────────────────────────────────────────────── */
+    function calcROI() {
+      const spend  = parseFloat(document.getElementById("roi-spend").value)  || 0;
+      const roas   = parseFloat(document.getElementById("roi-roas").value)   || 0;
+      const aov    = parseFloat(document.getElementById("roi-aov").value)    || 0;
+      const target = parseFloat(document.getElementById("roi-target").value) || 4.8;
+      if (!spend || !roas) { alert("Please enter your monthly ad spend and current ROAS."); return; }
+      const current   = spend * roas;
+      const projected = spend * target;
+      const uplift    = projected - current;
+      const fmt = n => "$" + Math.round(n).toLocaleString();
+      const aovLine = aov ? " With a " + fmt(aov) + " average order value, that's roughly " + Math.round(uplift / aov) + " additional orders/month." : "";
+      document.getElementById("roi-current").textContent   = fmt(current);
+      document.getElementById("roi-projected").textContent = fmt(projected);
+      document.getElementById("roi-uplift").textContent    = "+" + fmt(uplift);
+      document.getElementById("roi-sub").textContent       = "At a " + target + "× ROAS target on $" + spend.toLocaleString() + "/mo spend — that's an extra " + fmt(uplift) + " in monthly revenue." + aovLine;
+      document.getElementById("roi-result").classList.add("visible");
+    }
+
+    /* ────────────────────────────────────────────────────────────────
+       Audit Quiz
+    ──────────────────────────────────────────────────────────────── */
+    const auditAnswers = {};
+    document.querySelectorAll(".quiz-opt").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const q = btn.dataset.q;
+        document.querySelectorAll(`.quiz-opt[data-q="${q}"]`).forEach(b => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        auditAnswers[q] = parseInt(btn.dataset.val);
+        if (Object.keys(auditAnswers).length === 6) {
+          setTimeout(showAuditResult, 400);
+        }
+      });
+    });
+    function showAuditResult() {
+      const score = Object.values(auditAnswers).reduce((a, b) => a + b, 0);
+      const pct   = Math.round((score / 60) * 100);
+      document.getElementById("scoreNum").textContent = score;
+      document.getElementById("scoreRing").style.setProperty("--pct", pct + "%");
+      let label, desc;
+      if (score >= 48) {
+        label = "🏆 Strong Foundation";
+        desc  = "Your marketing stack is solid. The biggest wins now are in optimization — better creative testing, tighter audience segmentation, and AI search visibility.";
+      } else if (score >= 30) {
+        label = "⚡ Growth Ready";
+        desc  = "You have the basics, but there are clear gaps in attribution, nurture, or AI visibility. Fixing these typically unlocks 2–3× more revenue from your existing spend.";
+      } else if (score >= 15) {
+        label = "📈 High Opportunity";
+        desc  = "Multiple gaps identified. You're likely losing leads at every stage of the funnel. A structured growth system would have a dramatic impact fast.";
+      } else {
+        label = "🚨 Critical Gaps";
+        desc  = "Significant revenue is being lost today. The good news: there's massive upside with the right systems in place. This is exactly what Axis Marketing specializes in.";
+      }
+      document.getElementById("scoreLabel").textContent = label;
+      document.getElementById("scoreDesc").textContent  = desc;
+      document.getElementById("audit-questions").style.display = "none";
+      document.getElementById("audit-result").style.display    = "block";
+    }
+    function retakeAudit() {
+      Object.keys(auditAnswers).forEach(k => delete auditAnswers[k]);
+      document.querySelectorAll(".quiz-opt").forEach(b => b.classList.remove("selected"));
+      document.getElementById("audit-questions").style.display = "";
+      document.getElementById("audit-result").style.display    = "none";
+    }
+
+    /* ────────────────────────────────────────────────────────────────
+       Pricing Estimator
+    ──────────────────────────────────────────────────────────────── */
+    function calcPricing() {
+      const type = document.getElementById("pe-type").value;
+      const rev  = document.getElementById("pe-rev").value;
+      const goal = document.getElementById("pe-goal").value;
+      if (!type || !rev || !goal) { alert("Please answer all three fields."); return; }
+      const base = { "1": [1500,2500], "2": [2500,5000], "3": [5000,9500], "4": [9500,18000] }[rev];
+      const goalMod = { leads: 0, roas: 500, seo: 800, geo: 900, full: 1500 }[goal] || 0;
+      const lo = base[0] + goalMod;
+      const hi = base[1] + goalMod;
+      const includes = {
+        leads: "Lead gen ads management, CRM setup, follow-up automation",
+        roas:  "Paid ads optimization, creative testing, ROAS reporting",
+        seo:   "On-page SEO, local citations, content strategy, GBP optimization",
+        geo:   "AI answer engine optimization, entity authority building, structured data & content strategy for ChatGPT/Perplexity/AI Overviews",
+        full:  "Full-funnel ads + SEO + email/SMS + CRM + monthly strategy calls"
+      }[goal];
+      document.getElementById("pricing-range").textContent    = "$" + lo.toLocaleString() + " – $" + hi.toLocaleString() + " /mo";
+      document.getElementById("pricing-includes").textContent = "Typically includes: " + includes + ". Ad spend is billed separately.";
+      document.getElementById("pricing-result").classList.add("visible");
+    }
+
+    /* ────────────────────────────────────────────────────────────────
+       FAQ accordion
+    ──────────────────────────────────────────────────────────────── */
+    document.querySelectorAll(".faq-q").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".faq-item");
+        const isOpen = item.classList.contains("open");
+        document.querySelectorAll(".faq-item.open").forEach(i => i.classList.remove("open"));
+        if (!isOpen) item.classList.add("open");
+      });
+    });
+
+    /* ────────────────────────────────────────────────────────────────
+       Chatbot
+    ──────────────────────────────────────────────────────────────── */
+    (function() {
+      const bubble   = document.getElementById("chatBubble");
+      const panel    = document.getElementById("chatPanel");
+      const msgs     = document.getElementById("chatMsgs");
+      const opts     = document.getElementById("chatOpts");
+      const inputRow = document.getElementById("chatInputRow");
+      const input    = document.getElementById("chatInput");
+      const sendBtn  = document.getElementById("chatSendBtn");
+      const closeBtn = document.getElementById("chatClose");
+
+      let isOpen = false;
+      let step   = 0;
+      let chatData = {};
+
+      const flow = [
+        { ask: "👋 Hey there! I'm the Axis Marketing AI. Before connecting you with a strategist, mind if I ask a few quick questions?", opts: ["Sure, let's go!", "Just show me the form"], freeInput: false },
+        { ask: "What's your first name?", freeInput: true, key: "firstName" },
+        { ask: "Nice to meet you, {firstName}! What's the name of your business?", freeInput: true, key: "company" },
+        { ask: "What's your biggest marketing challenge right now?", opts: ["Not enough leads", "Poor ROAS on ads", "No time to manage it", "Starting from scratch"], freeInput: true, key: "challenge" },
+        { ask: "What's your monthly marketing budget?", opts: ["Under $1k", "$1k–$3k", "$3k–$7.5k", "$7.5k+"], freeInput: false, key: "budget" },
+        { ask: "Last one — what's your email so we can send your free growth plan?", freeInput: true, key: "email" },
+      ];
+
+      function openChat() {
+        isOpen = true;
+        panel.classList.add("open");
+        bubble.textContent = "✕";
+        if (step === 0) { setTimeout(() => botSay(flow[0].ask), 400); showOpts(flow[0].opts); }
+      }
+      function closeChat() {
+        isOpen = false;
+        panel.classList.remove("open");
+        bubble.textContent = "💬";
+      }
+      window.__nexaCloseChat = closeChat;
+
+      bubble.addEventListener("click", () => isOpen ? closeChat() : openChat());
+      closeBtn.addEventListener("click", closeChat);
+
+      function botSay(text) {
+        const typing = document.createElement("div");
+        typing.className = "chat-typing";
+        typing.innerHTML = "<span></span><span></span><span></span>";
+        msgs.appendChild(typing);
+        msgs.scrollTop = msgs.scrollHeight;
+        setTimeout(() => {
+          typing.remove();
+          const msg = document.createElement("div");
+          msg.className = "chat-msg bot";
+          msg.textContent = text;
+          msgs.appendChild(msg);
+          msgs.scrollTop = msgs.scrollHeight;
+        }, 800 + text.length * 8);
+      }
+
+      function userSay(text) {
+        const msg = document.createElement("div");
+        msg.className = "chat-msg user";
+        msg.textContent = text;
+        msgs.appendChild(msg);
+        msgs.scrollTop = msgs.scrollHeight;
+      }
+
+      function showOpts(options) {
+        opts.innerHTML = "";
+        inputRow.style.display = "none";
+        if (!options || options.length === 0) return;
+        options.forEach(o => {
+          const btn = document.createElement("button");
+          btn.className = "chat-opt";
+          btn.textContent = o;
+          btn.addEventListener("click", () => handleInput(o));
+          opts.appendChild(btn);
+        });
+      }
+
+      function showFreeInput() {
+        opts.innerHTML = "";
+        inputRow.style.display = "flex";
+        setTimeout(() => input.focus(), 100);
+      }
+
+      function interpolate(str) {
+        return str.replace(/\{(\w+)\}/g, (_, k) => chatData[k] || "");
+      }
+
+      function handleInput(value) {
+        opts.innerHTML = "";
+        inputRow.style.display = "none";
+        userSay(value);
+
+        if (step === 0 && value === "Just show me the form") {
+          setTimeout(() => {
+            botSay("Of course! 👇 The form is right up top. I'll be here if you have questions.");
+            const contactEl = document.getElementById("contact");
+            if (contactEl) contactEl.scrollIntoView({ behavior: "smooth" });
+            else window.location.href = "Landing Page.html#contact";
+          }, 600);
+          return;
+        }
+
+        const curr = flow[step];
+        if (curr && curr.key) chatData[curr.key] = value;
+        step++;
+
+        if (step >= flow.length) {
+          finishChat();
+          return;
+        }
+
+        const next = flow[step];
+        const delay = 900;
+        setTimeout(() => {
+          botSay(interpolate(next.ask));
+          setTimeout(() => {
+            if (next.opts && next.opts.length) showOpts(next.opts);
+            else showFreeInput();
+          }, 900 + next.ask.length * 8);
+        }, delay);
+      }
+
+      function finishChat() {
+        setTimeout(() => {
+          botSay("Perfect — we've got everything we need! 🚀 I'm logging your info and a Axis Marketing strategist will reach out to " + (chatData.email || "you") + " within 1 business day with a custom growth plan.");
+          // Push to CRM
+          if (chatData.email) {
+            const chatLead = {
+              firstName:  chatData.firstName || "Chat",
+              lastName:   "Lead",
+              company:    chatData.company || "Unknown",
+              email:      chatData.email,
+              phone:      "",
+              service:    chatData.challenge || "Chat Lead",
+              budget:     chatData.budget || "",
+              goal:       chatData.challenge || ""
+            };
+            pushToCRM(chatLead);
+            sendLeadEmail(chatLead);
+          }
+          // Show CTA
+          setTimeout(() => {
+            const cta = document.createElement("div");
+            cta.className = "chat-msg bot";
+            cta.innerHTML = '📋 <a href="Landing Page.html#contact" style="color:var(--gold-bright);font-weight:700" onclick="window.__nexaCloseChat && window.__nexaCloseChat()">Fill out the full form</a> for the fastest response — or just wait for our call!';
+            msgs.appendChild(cta);
+            msgs.scrollTop = msgs.scrollHeight;
+          }, 1400);
+        }, 600);
+      }
+
+      sendBtn.addEventListener("click", () => {
+        const val = input.value.trim();
+        if (val) { input.value = ""; handleInput(val); }
+      });
+      input.addEventListener("keydown", e => {
+        if (e.key === "Enter") { const val = input.value.trim(); if (val) { input.value = ""; handleInput(val); } }
+      });
+    })();
+
+    // ── Scroll-to-top ────────────────────────────────────────────
+    (function() {
+      const btn = document.getElementById("scrollTopBtn");
+      if (!btn) return;
+      window.addEventListener("scroll", () => {
+        btn.classList.toggle("is-visible", window.scrollY > 400);
+      }, { passive: true });
+      btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    })();
+  </script>
+</body>
+</html>
+

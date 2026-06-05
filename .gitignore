@@ -1,0 +1,17 @@
+# OS / editor
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Local tooling / config
+.claude/
+**/.claude/
+.netlify/
+
+# Secrets (none should ever live in this static site, but just in case)
+.env
+.env.*
+
+# Logs / deps
+*.log
+node_modules/
