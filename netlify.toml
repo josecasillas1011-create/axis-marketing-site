@@ -1,0 +1,19 @@
+# Netlify config for the Axis Marketing public site (static, no build step).
+# This repo's root IS the site root (index.html + the other .html pages live here).
+# Netlify automatically serves 404.html for unknown paths.
+
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
