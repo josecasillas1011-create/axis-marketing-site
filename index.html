@@ -644,25 +644,11 @@
       border-radius: 12px;
       padding: 24px;
     }
-    .stars { color: var(--amber); font-size: 14px; letter-spacing: 2px; margin-bottom: 12px; }
     .review-card p { color: #d0dcea; font-size: 14px; line-height: 1.65; margin-bottom: 18px; font-style: italic; }
     .reviewer {
       align-items: center;
       display: flex;
       gap: 12px;
-    }
-    .reviewer-avatar {
-      align-items: center;
-      background: rgba(184,150,46,0.18);
-      border-radius: 50%;
-      color: #E8C870;
-      display: flex;
-      flex-shrink: 0;
-      font-size: 13px;
-      font-weight: 800;
-      height: 38px;
-      justify-content: center;
-      width: 38px;
     }
     .reviewer strong { display: block; font-size: 13px; }
     .reviewer span   { color: var(--muted); font-size: 12px; }
@@ -875,20 +861,9 @@
       margin-bottom: 40px;
     }
     .footer-brand p { color: var(--muted); font-size: 13px; line-height: 1.65; margin-top: 14px; max-width: 260px; }
-    .footer-social { display: flex; gap: 10px; margin-top: 18px; }
-    .footer-social-link {
-      align-items: center;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--muted);
-      display: flex;
-      height: 36px;
-      justify-content: center;
-      transition: background 0.15s, color 0.15s, border-color 0.15s;
-      width: 36px;
-    }
-    .footer-social-link:hover { background: rgba(184,150,46,0.12); border-color: rgba(184,150,46,0.35); color: var(--gold-bright); }
+    .footer-contact { display: grid; gap: 6px; margin-top: 18px; }
+    .footer-contact a { color: var(--muted); font-size: 13px; transition: color 0.15s; }
+    .footer-contact a:hover { color: var(--gold-bright); }
     .footer-col h4  { font-size: 13px; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 14px; text-transform: uppercase; color: var(--muted); }
     .footer-col ul  { list-style: none; display: grid; gap: 9px; }
     .footer-col a   { color: var(--muted); font-size: 13px; transition: color 0.15s; }
@@ -903,34 +878,6 @@
       padding-top: 24px;
       flex-wrap: wrap;
     }
-
-    /* ── Visitor badge ──────────────────────────────────────────── */
-    .visitor-badge {
-      align-items: center;
-      animation: floatUp 0.6s ease-out forwards;
-      background: rgba(20,42,68,0.94);
-      border: 1px solid rgba(184,150,46,0.3);
-      border-radius: 999px;
-      bottom: 80px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      display: flex;
-      font-size: 12px;
-      font-weight: 700;
-      gap: 8px;
-      left: 20px;
-      opacity: 0;
-      padding: 8px 16px;
-      position: fixed;
-      z-index: 200;
-    }
-    .vb-dot {
-      animation: blink 1.5s ease-in-out infinite;
-      background: var(--gold-bright);
-      border-radius: 50%;
-      height: 7px;
-      width: 7px;
-    }
-    .vb-text { color: #e0eaff; }
 
     /* ── Scroll-to-top ──────────────────────────────────────────── */
     .scroll-top-btn {
@@ -1230,7 +1177,6 @@
       .svc-grid        { grid-template-columns: 1fr; }
       .services-grid   { grid-template-columns: 1fr; }
       .chat-panel      { width: min(340px, calc(100vw - 28px)); right: 14px; bottom: 82px; }
-      .visitor-badge   { display: none; }
       .stats-grid      { grid-template-columns: 1fr 1fr; }
       .section-pad     { padding: 52px 0; }
       .cta-band        { padding: 52px 0; }
@@ -1376,7 +1322,7 @@
   <!-- ── Navigation ── -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="Landing Page.html" class="nav-logo">
+      <a href="/" class="nav-logo">
         <img src="assets/axis-main-logo-white.png"
              alt="Axis Marketing — Next Gen Progression"
              height="38" />
@@ -1384,7 +1330,7 @@
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#results">Results</a></li>
+        <li><a href="#results">How We Work</a></li>
         <li><a href="Free Tools.html">Free Tools</a></li>
         <li><a href="FAQ.html">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -1403,7 +1349,7 @@
     <ul>
       <li><a href="#services">Services</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#results">Results</a></li>
+      <li><a href="#results">How We Work</a></li>
       <li><a href="Free Tools.html">Free Tools</a></li>
       <li><a href="FAQ.html">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -1460,6 +1406,7 @@
               <h3 style="margin-bottom:0;">Get Your Free Growth Strategy</h3>
             </div>
             <p>Tell us where growth feels stuck and we will map out the next practical moves with you. No pressure, no inflated promises.</p>
+            <p style="font-size:13px;margin-top:-6px;">Prefer to reach out directly? <a href="mailto:Jose@axismarketingai.net" style="color:var(--gold-bright);">Jose@axismarketingai.net</a> · <a href="tel:+19094942389" style="color:var(--gold-bright);">(909) 494-2389</a></p>
 
             <form id="leadForm" novalidate>
               <div class="form-row">
@@ -1805,10 +1752,8 @@
       </div>
       <div class="reviews-grid">
         <div class="review-card">
-          <div class="stars">★★★★★</div>
           <p>"We are intentionally partnering with a small number of businesses while we tighten the playbook, prove the systems, and stay close to the work."</p>
           <div class="reviewer">
-            <div class="reviewer-avatar">SP</div>
             <div>
               <strong>Select Partnerships</strong>
               <span>Current operating model</span>
@@ -1817,10 +1762,8 @@
           </div>
         </div>
         <div class="review-card">
-          <div class="stars">★★★★★</div>
           <p>"Our focus is building practical systems first: better intake, stronger visibility, cleaner reporting, and follow-up that does not depend on memory alone."</p>
           <div class="reviewer">
-            <div class="reviewer-avatar">SF</div>
             <div>
               <strong>System-First Delivery</strong>
               <span>What clients can expect</span>
@@ -1829,10 +1772,8 @@
           </div>
         </div>
         <div class="review-card">
-          <div class="stars">★★★★★</div>
           <p>"The near-term goal is to earn a reputation for thoughtful execution, honest communication, and a tighter operating system for Inland Empire businesses that want real partnership."</p>
           <div class="reviewer">
-            <div class="reviewer-avatar">NG</div>
             <div>
               <strong>2026 Agency Goal</strong>
               <span>Quality over volume</span>
@@ -1870,20 +1811,9 @@
                alt="Axis Marketing — Next Gen Progression"
                class="footer-wordmark" />
           <p>California-based growth systems for a select roster of Inland Empire and Southern California businesses. Hands-on strategy, tighter reporting, and smarter follow-up.</p>
-          <!-- Social links — replace href values with real profile URLs -->
-          <div class="footer-social">
-            <a href="https://instagram.com/axismarketing" target="_blank" rel="noopener" aria-label="Axis Marketing on Instagram" class="footer-social-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            </a>
-            <a href="https://facebook.com/axismarketing" target="_blank" rel="noopener" aria-label="Axis Marketing on Facebook" class="footer-social-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-            <a href="https://linkedin.com/company/axismarketing" target="_blank" rel="noopener" aria-label="Axis Marketing on LinkedIn" class="footer-social-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="https://tiktok.com/@axismarketing" target="_blank" rel="noopener" aria-label="Axis Marketing on TikTok" class="footer-social-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
-            </a>
+          <div class="footer-contact">
+            <a href="mailto:Jose@axismarketingai.net">Jose@axismarketingai.net</a>
+            <a href="tel:+19094942389">(909) 494-2389</a>
           </div>
         </div>
         <div class="footer-col">
@@ -1900,7 +1830,7 @@
           <h4>Company</h4>
           <ul>
             <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#results">Case Studies</a></li>
+            <li><a href="#results">How We Work</a></li>
             <li><a href="FAQ.html">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -1919,12 +1849,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- ── Visitor Badge ── -->
-  <div class="visitor-badge" id="visitorBadge" style="animation-delay:2s">
-    <span class="vb-dot"></span>
-    <span class="vb-text" id="vbText">14 people viewing this page</span>
-  </div>
 
   <!-- ── Chatbot ── -->
   <!-- Scroll to top -->
@@ -2120,20 +2044,6 @@
         if (target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth" }); }
       });
     });
-
-    /* ────────────────────────────────────────────────────────────────
-       Visitor badge
-    ──────────────────────────────────────────────────────────────── */
-    (function() {
-      let count = Math.floor(Math.random() * 10) + 9; // 9-18
-      const txt = document.getElementById("vbText");
-      function update() {
-        const delta = Math.random() > 0.5 ? 1 : -1;
-        count = Math.max(6, Math.min(28, count + delta));
-        txt.textContent = count + " people viewing this page";
-      }
-      setInterval(update, 4500 + Math.random() * 3000);
-    })();
 
     /* ────────────────────────────────────────────────────────────────
        Tools tabs
@@ -2349,7 +2259,7 @@
             botSay("Of course! 👇 The form is right up top. I'll be here if you have questions.");
             const contactEl = document.getElementById("contact");
             if (contactEl) contactEl.scrollIntoView({ behavior: "smooth" });
-            else window.location.href = "Landing Page.html#contact";
+            else window.location.href = "/#contact";
           }, 600);
           return;
         }
