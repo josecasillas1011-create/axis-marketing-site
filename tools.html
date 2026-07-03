@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Tools — Axis Marketing</title>
+  <meta name="description" content="Free marketing calculators from Axis Marketing — ad ROI calculator, marketing gap audit, and engagement pricing estimator. No email required." />
+  <link rel="icon" type="image/png" href="assets/axis-icon-logo.png" />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-head { padding: 160px 0 24px; text-align: center; }
+    .page-head p { color: var(--muted); font-size: 17px; line-height: 1.65; margin: 16px auto 0; max-width: 560px; }
+    @media (max-width: 600px) { .page-head { padding-top: 130px; } }
+  </style>
+</head>
+<body>
+  <!-- SVG icon set -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="i-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></symbol>
+  </svg>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/axis-main-logo-white.png" alt="Axis Marketing — Next Gen Progression" height="38" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#results">How We Work</a></li>
+        <li><a href="tools.html" aria-current="page">Free Tools</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn-primary nav-cta">Free Strategy Session →</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <ul>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#how-it-works">How It Works</a></li>
+      <li><a href="index.html#results">How We Work</a></li>
+      <li><a href="tools.html">Free Tools</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#contact" class="btn-primary">Get My Free Strategy Session →</a>
+  </div>
+
+  <!-- ── Interactive Tools ── -->
+  <header class="page-head">
+    <div class="container">
+      <p class="eyebrow reveal">Free tools</p>
+      <h1 class="reveal">See Your Growth Potential<br>Before You Commit</h1>
+      <p class="reveal reveal-d1">Three free calculators — no email required. Get real numbers on your marketing ROI, audit your current gaps, and estimate what an Axis Marketing engagement would cost.</p>
+    </div>
+  </header>
+
+  <section class="section-pad" id="tools" style="padding-top:36px">
+    <div class="container">
+      <div class="tools-tabs reveal">
+        <button class="tools-tab active" data-tab="roi"><svg><use href="#i-coins"/></svg> ROI Calculator</button>
+        <button class="tools-tab" data-tab="audit"><svg><use href="#i-search"/></svg> Free Audit Quiz</button>
+        <button class="tools-tab" data-tab="pricing"><svg><use href="#i-clipboard"/></svg> Pricing Estimator</button>
+      </div>
+
+      <!-- ROI Calculator -->
+      <div class="tools-panel active" id="tab-roi">
+        <div class="tool-card glass-card reveal">
+          <h3>Ad ROI Calculator</h3>
+          <p>Enter your current numbers and see what a 4.8× ROAS target looks like for your business.</p>
+          <div class="tool-2col">
+            <div class="tool-field">
+              <label for="roi-spend">Monthly Ad Spend ($)</label>
+              <input type="number" id="roi-spend" placeholder="5000" min="0" />
+            </div>
+            <div class="tool-field">
+              <label for="roi-roas">Current ROAS (e.g. 2.1)</label>
+              <input type="number" id="roi-roas" placeholder="2.1" step="0.1" min="0" />
+            </div>
+            <div class="tool-field">
+              <label for="roi-aov">Average Order Value ($)</label>
+              <input type="number" id="roi-aov" placeholder="250" min="0" />
+            </div>
+            <div class="tool-field">
+              <label for="roi-target">Target ROAS</label>
+              <input type="number" id="roi-target" placeholder="4.8" step="0.1" min="0" value="4.8" />
+            </div>
+          </div>
+          <button class="btn-primary" onclick="calcROI()" style="margin-top:18px;width:100%">Calculate My ROI →</button>
+          <div class="tool-result" id="roi-result">
+            <div class="tool-result-grid">
+              <div>
+                <div class="tool-result-label">Current Revenue</div>
+                <div class="tool-result-value" id="roi-current">—</div>
+              </div>
+              <div>
+                <div class="tool-result-label">Projected Revenue</div>
+                <div class="tool-result-value" id="roi-projected" style="color:var(--gold-pale)">—</div>
+              </div>
+              <div>
+                <div class="tool-result-label">Monthly Uplift</div>
+                <div class="tool-result-value" id="roi-uplift">—</div>
+              </div>
+            </div>
+            <div class="tool-result-sub" id="roi-sub"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Free Audit Quiz -->
+      <div class="tools-panel" id="tab-audit">
+        <div class="tool-card glass-card">
+          <h3>Marketing Gap Audit</h3>
+          <p>Answer 6 quick questions and get your Marketing Health Score — with specific gaps to fix first.</p>
+          <div id="audit-questions">
+            <div class="quiz-question" data-q="0">
+              <p>1. Do you currently run paid ads (Meta, Google, TikTok)?</p>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-q="0" data-val="10">Yes, and they're profitable</button>
+                <button class="quiz-opt" data-q="0" data-val="5">Yes, but results are inconsistent</button>
+                <button class="quiz-opt" data-q="0" data-val="2">We tried but paused them</button>
+                <button class="quiz-opt" data-q="0" data-val="0">No paid ads at all</button>
+              </div>
+            </div>
+            <div class="quiz-question" data-q="1">
+              <p>2. How do you track where your leads come from?</p>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-q="1" data-val="10">Full attribution in a CRM</button>
+                <button class="quiz-opt" data-q="1" data-val="6">Google Analytics only</button>
+                <button class="quiz-opt" data-q="1" data-val="2">Manually (ask customers)</button>
+                <button class="quiz-opt" data-q="1" data-val="0">We don't track it</button>
+              </div>
+            </div>
+            <div class="quiz-question" data-q="2">
+              <p>3. How often do you contact leads after they inquire?</p>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-q="2" data-val="10">Automated follow-up within 5 min</button>
+                <button class="quiz-opt" data-q="2" data-val="6">Within the same day</button>
+                <button class="quiz-opt" data-q="2" data-val="2">Within a few days</button>
+                <button class="quiz-opt" data-q="2" data-val="0">When we get to it</button>
+              </div>
+            </div>
+            <div class="quiz-question" data-q="3">
+              <p>4. Do you have an email / SMS nurture sequence for cold leads?</p>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-q="3" data-val="10">Yes, fully automated</button>
+                <button class="quiz-opt" data-q="3" data-val="5">Basic email sequence</button>
+                <button class="quiz-opt" data-q="3" data-val="1">Just a one-off newsletter</button>
+                <button class="quiz-opt" data-q="3" data-val="0">No nurture at all</button>
+              </div>
+            </div>
+            <div class="quiz-question" data-q="4">
+              <p>5. Does your website clearly explain your offer and have a strong CTA?</p>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-q="4" data-val="10">Yes — optimized for conversions</button>
+                <button class="quiz-opt" data-q="4" data-val="5">Mostly, but it needs work</button>
+                <button class="quiz-opt" data-q="4" data-val="2">It's outdated</button>
+                <button class="quiz-opt" data-q="4" data-val="0">No real CTA / just contact page</button>
+              </div>
+            </div>
+            <div class="quiz-question" data-q="5">
+              <p>6. Does your business appear in AI-generated answers (ChatGPT, Google AI Overviews, Perplexity)?</p>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-q="5" data-val="10">Yes — we show up regularly</button>
+                <button class="quiz-opt" data-q="5" data-val="5">Sometimes, but inconsistently</button>
+                <button class="quiz-opt" data-q="5" data-val="2">I've never checked</button>
+                <button class="quiz-opt" data-q="5" data-val="0">No — competitors appear instead</button>
+              </div>
+            </div>
+          </div>
+          <div id="audit-result" style="display:none;text-align:center;padding:10px 0">
+            <div style="display:flex;justify-content:center;margin-bottom:16px">
+              <div class="quiz-score-ring" id="scoreRing">
+                <span class="quiz-score-num" id="scoreNum">0</span>
+                <span class="quiz-score-lbl">/ 60</span>
+              </div>
+            </div>
+            <div style="font-size:20px;font-weight:800;margin-bottom:8px" id="scoreLabel"></div>
+            <div style="color:var(--muted);font-size:13px;line-height:1.65;max-width:420px;margin:0 auto 20px" id="scoreDesc"></div>
+            <a href="index.html#contact" class="btn-primary" style="display:inline-flex">Get My Free Full Audit →</a>
+            <button onclick="retakeAudit()" style="display:block;margin:12px auto 0;background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline">Retake Quiz</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Estimator -->
+      <div class="tools-panel" id="tab-pricing">
+        <div class="tool-card glass-card">
+          <h3>Engagement Pricing Estimator</h3>
+          <p>Select your goals and we'll estimate what an Axis Marketing engagement typically looks like for your business size.</p>
+          <div class="tool-field">
+            <label for="pe-type">Business Type</label>
+            <select id="pe-type">
+              <option value="">— Select —</option>
+              <option value="local">Local Service Business</option>
+              <option value="ecom">E-commerce Brand</option>
+              <option value="saas">SaaS / Software</option>
+              <option value="agency">Agency / B2B Service</option>
+              <option value="med">Medical / Health Practice</option>
+            </select>
+          </div>
+          <div class="tool-field">
+            <label for="pe-rev">Monthly Revenue Range</label>
+            <select id="pe-rev">
+              <option value="">— Select —</option>
+              <option value="1">Under $20k/mo</option>
+              <option value="2">$20k – $75k/mo</option>
+              <option value="3">$75k – $250k/mo</option>
+              <option value="4">$250k+/mo</option>
+            </select>
+          </div>
+          <div class="tool-field">
+            <label for="pe-goal">Primary Goal</label>
+            <select id="pe-goal">
+              <option value="">— Select —</option>
+              <option value="leads">More leads / appointments</option>
+              <option value="roas">Improve paid ad ROAS</option>
+              <option value="social">Social media presence</option>
+              <option value="seo">Rank higher on Google</option>
+              <option value="geo">AI Search Visibility (GEO/AEO)</option>
+              <option value="full">Full-funnel growth system</option>
+            </select>
+          </div>
+          <button class="btn-primary" onclick="calcPricing()" style="margin-top:18px;width:100%">Estimate My Investment →</button>
+          <div class="tool-result" id="pricing-result">
+            <div class="tool-result-label">Estimated Monthly Investment</div>
+            <div class="tool-result-value" id="pricing-range" style="color:#fff"></div>
+            <div class="tool-result-sub" id="pricing-includes" style="margin-top:10px"></div>
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(150,167,192,0.12);font-size:12px;color:var(--muted)">
+              This is a rough estimate. Your actual proposal will depend on scope, channels, and competition. Strategy sessions are always free.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CTA Band ── -->
+  <section class="cta-band">
+    <div class="container">
+      <img src="assets/axis-main-logo-white.png" alt="Axis Marketing — Next Gen Progression" class="cta-wordmark reveal" />
+      <p class="eyebrow reveal" style="text-align:center">Ready to grow?</p>
+      <h2 class="reveal">Like What the Numbers Say?<br>Let's Map the Next Move.</h2>
+      <p class="reveal reveal-d1">Bring your results to a free strategy session and we'll turn them into a practical, channel-by-channel growth plan.</p>
+      <div class="cta-actions reveal reveal-d2">
+        <a href="index.html#contact" class="btn-primary" style="font-size:17px;min-height:58px;padding:0 36px">
+          Get My Free Strategy Session →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/axis-main-logo-white.png" alt="Axis Marketing — Next Gen Progression" class="footer-wordmark" />
+          <p>California-based growth systems for a select roster of Inland Empire and Southern California businesses. Hands-on strategy, tighter reporting, and smarter follow-up.</p>
+          <div class="footer-contact">
+            <a href="mailto:jose@axismarketingai.net">jose@axismarketingai.net</a>
+            <a href="tel:+19094942389">(909) 494-2389</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Paid Advertising</a></li>
+            <li><a href="index.html#services">SEO &amp; Local Search</a></li>
+            <li><a href="index.html#services">Social Media Management</a></li>
+            <li><a href="index.html#services">Email &amp; SMS Marketing</a></li>
+            <li><a href="index.html#services">Website Design &amp; CRO</a></li>
+            <li><a href="index.html#services">AI Growth Strategy</a></li>
+            <li><a href="index.html#services">AI Search Visibility (GEO/AEO)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="index.html#results">How We Work</a></li>
+            <li><a href="tools.html">Free Tools</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Axis Marketing. All rights reserved.</span>
+        <span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Back to top" title="Back to top">↑</button>
+  <script src="site.js" defer></script>
+  <script>
+    /* ── Tools tabs ── */
+    document.querySelectorAll(".tools-tab").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tools-tab").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".tools-panel").forEach(p => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("tab-" + btn.dataset.tab).classList.add("active");
+      });
+    });
+
+    /* ── ROI Calculator ── */
+    function calcROI() {
+      const spend  = parseFloat(document.getElementById("roi-spend").value)  || 0;
+      const roas   = parseFloat(document.getElementById("roi-roas").value)   || 0;
+      const aov    = parseFloat(document.getElementById("roi-aov").value)    || 0;
+      const target = parseFloat(document.getElementById("roi-target").value) || 4.8;
+      if (!spend || !roas) { alert("Please enter your monthly ad spend and current ROAS."); return; }
+      const current   = spend * roas;
+      const projected = spend * target;
+      const uplift    = projected - current;
+      const fmt = n => "$" + Math.round(n).toLocaleString();
+      const aovLine = aov ? " With a " + fmt(aov) + " average order value, that's roughly " + Math.round(uplift / aov) + " additional orders/month." : "";
+      document.getElementById("roi-current").textContent   = fmt(current);
+      document.getElementById("roi-projected").textContent = fmt(projected);
+      document.getElementById("roi-uplift").textContent    = "+" + fmt(uplift);
+      document.getElementById("roi-sub").textContent       = "At a " + target + "× ROAS target on $" + spend.toLocaleString() + "/mo spend — that's an extra " + fmt(uplift) + " in monthly revenue." + aovLine;
+      document.getElementById("roi-result").classList.add("visible");
+    }
+
+    /* ── Audit Quiz ── */
+    const auditAnswers = {};
+    document.querySelectorAll(".quiz-opt").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const q = btn.dataset.q;
+        document.querySelectorAll(`.quiz-opt[data-q="${q}"]`).forEach(b => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        auditAnswers[q] = parseInt(btn.dataset.val);
+        if (Object.keys(auditAnswers).length === 6) {
+          setTimeout(showAuditResult, 400);
+        }
+      });
+    });
+    function showAuditResult() {
+      const score = Object.values(auditAnswers).reduce((a, b) => a + b, 0);
+      const pct   = Math.round((score / 60) * 100);
+      document.getElementById("scoreNum").textContent = score;
+      document.getElementById("scoreRing").style.setProperty("--pct", pct + "%");
+      let label, desc;
+      if (score >= 48) {
+        label = "Strong Foundation";
+        desc  = "Your marketing stack is solid. The biggest wins now are in optimization — better creative testing, tighter audience segmentation, and AI search visibility.";
+      } else if (score >= 30) {
+        label = "Growth Ready";
+        desc  = "You have the basics, but there are clear gaps in attribution, nurture, or AI visibility. Fixing these typically unlocks meaningfully more revenue from your existing spend.";
+      } else if (score >= 15) {
+        label = "High Opportunity";
+        desc  = "Multiple gaps identified. You're likely losing leads at every stage of the funnel. A structured growth system would have a dramatic impact fast.";
+      } else {
+        label = "Critical Gaps";
+        desc  = "Significant revenue is likely being lost today. The good news: there's massive upside with the right systems in place. This is exactly what Axis Marketing specializes in.";
+      }
+      document.getElementById("scoreLabel").textContent = label;
+      document.getElementById("scoreDesc").textContent  = desc;
+      document.getElementById("audit-questions").style.display = "none";
+      document.getElementById("audit-result").style.display    = "block";
+    }
+    function retakeAudit() {
+      Object.keys(auditAnswers).forEach(k => delete auditAnswers[k]);
+      document.querySelectorAll(".quiz-opt").forEach(b => b.classList.remove("selected"));
+      document.getElementById("audit-questions").style.display = "";
+      document.getElementById("audit-result").style.display    = "none";
+    }
+
+    /* ── Pricing Estimator ── */
+    function calcPricing() {
+      const type = document.getElementById("pe-type").value;
+      const rev  = document.getElementById("pe-rev").value;
+      const goal = document.getElementById("pe-goal").value;
+      if (!type || !rev || !goal) { alert("Please answer all three fields."); return; }
+      const base = { "1": [1500,2500], "2": [2500,5000], "3": [5000,9500], "4": [9500,18000] }[rev];
+      const goalMod = { leads: 0, roas: 500, social: 400, seo: 800, geo: 900, full: 1500 }[goal] || 0;
+      const lo = base[0] + goalMod;
+      const hi = base[1] + goalMod;
+      const includes = {
+        leads:  "Lead gen ads management, CRM setup, follow-up automation",
+        roas:   "Paid ads optimization, creative testing, ROAS reporting",
+        social: "Content planning, channel management, engagement systems",
+        seo:    "On-page SEO, local citations, content strategy, GBP optimization",
+        geo:    "AI answer engine optimization, entity authority building, structured data & content strategy for ChatGPT/Perplexity/AI Overviews",
+        full:   "Full-funnel ads + SEO + email/SMS + CRM + monthly strategy calls"
+      }[goal];
+      document.getElementById("pricing-range").textContent    = "$" + lo.toLocaleString() + " – $" + hi.toLocaleString() + " /mo";
+      document.getElementById("pricing-includes").textContent = "Typically includes: " + includes + ". Ad spend is billed separately.";
+      document.getElementById("pricing-result").classList.add("visible");
+    }
+  </script>
+</body>
+</html>

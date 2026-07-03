@@ -6,6 +6,33 @@
   publish = "."
   command = ""
 
+# 301s from the old page filenames (with spaces) to the new clean URLs.
+# Netlify normalizes %20 to a space, so one rule covers both forms.
+[[redirects]]
+  from = "/FAQ.html"
+  to = "/faq.html"
+  status = 301
+
+[[redirects]]
+  from = "/Free Tools.html"
+  to = "/tools.html"
+  status = 301
+
+[[redirects]]
+  from = "/Privacy Policy.html"
+  to = "/privacy.html"
+  status = 301
+
+[[redirects]]
+  from = "/Terms of Service.html"
+  to = "/terms.html"
+  status = 301
+
+[[redirects]]
+  from = "/Landing Page.html"
+  to = "/"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]

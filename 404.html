@@ -7,105 +7,25 @@
   <link rel="icon" type="image/png" href="assets/axis-icon-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #0A1628; --border: rgba(166,183,210,0.14);
-      --red: #B8962E; --red-bright: #CCA84A;
-      --text: #eef5ff; --muted: #8a9ab2;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
-      color-scheme: dark;
-    }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      text-align: center;
-    }
-    .mark {
-      width: 64px;
-      height: 64px;
-      opacity: 0.18;
-      margin-bottom: 32px;
-    }
+    body { align-items: center; display: flex; flex-direction: column; justify-content: center; padding: 24px; text-align: center; }
+    .mark { height: 64px; margin-bottom: 32px; opacity: 0.18; width: 64px; }
     .code {
-      font-size: clamp(80px, 18vw, 140px);
-      font-weight: 900;
-      line-height: 1;
-      background: linear-gradient(135deg, var(--red-bright), var(--red));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-family: var(--font-head);
+      font-size: clamp(80px, 18vw, 140px); font-weight: 700; line-height: 1;
+      background: linear-gradient(135deg, var(--gold-pale), var(--gold));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
       margin-bottom: 16px;
     }
-    h1 {
-      font-size: clamp(20px, 4vw, 30px);
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-    p {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.7;
-      max-width: 400px;
-      margin-bottom: 36px;
-    }
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .btn-primary {
-      align-items: center;
-      background: linear-gradient(135deg, var(--red-bright), var(--red));
-      border: none;
-      border-radius: 8px;
-      color: #fff;
-      cursor: pointer;
-      display: inline-flex;
-      font-family: inherit;
-      font-size: 14px;
-      font-weight: 800;
-      gap: 6px;
-      min-height: 46px;
-      padding: 0 24px;
-      text-decoration: none;
-      transition: opacity 0.15s, transform 0.15s;
-    }
-    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
-    .btn-ghost {
-      align-items: center;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      cursor: pointer;
-      display: inline-flex;
-      font-family: inherit;
-      font-size: 14px;
-      font-weight: 700;
-      gap: 6px;
-      min-height: 46px;
-      padding: 0 20px;
-      text-decoration: none;
-      transition: background 0.15s;
-    }
-    .btn-ghost:hover { background: rgba(255,255,255,0.08); }
-    footer {
-      position: fixed;
-      bottom: 24px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--text); }
+    h1 { font-size: clamp(20px, 4vw, 30px); margin-bottom: 12px; }
+    body > p { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 36px; max-width: 400px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .page-footer { bottom: 24px; color: var(--muted); font-size: 12px; position: fixed; }
+    .page-footer a { color: var(--muted); }
+    .page-footer a:hover { color: var(--text); }
   </style>
 </head>
 <body>
@@ -116,13 +36,13 @@
   <p>The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
 
   <div class="actions">
-    <a href="Landing Page.html" class="btn-primary">← Back to Home</a>
-    <a href="index.html#contact" class="btn-ghost">Book a Strategy Call</a>
+    <a href="/" class="btn-primary">← Back to Home</a>
+    <a href="/#contact" class="btn-ghost">Book a Strategy Call</a>
   </div>
 
-  <footer>
-    <p>© 2026 Axis Marketing &nbsp;·&nbsp; <a href="Privacy Policy.html">Privacy</a> &nbsp;·&nbsp; <a href="Terms of Service.html">Terms</a></p>
-  </footer>
+  <div class="page-footer">
+    <p>© 2026 Axis Marketing &nbsp;·&nbsp; <a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a></p>
+  </div>
 
 </body>
 </html>
