@@ -7,29 +7,29 @@
   command = ""
 
 # 301s from the old page filenames (with spaces) to the new clean URLs.
-# Netlify normalizes %20 to a space, so one rule covers both forms.
+# Paths with spaces must be URL-encoded (%20) in redirect rules.
 [[redirects]]
   from = "/FAQ.html"
   to = "/faq.html"
   status = 301
 
 [[redirects]]
-  from = "/Free Tools.html"
+  from = "/Free%20Tools.html"
   to = "/tools.html"
   status = 301
 
 [[redirects]]
-  from = "/Privacy Policy.html"
+  from = "/Privacy%20Policy.html"
   to = "/privacy.html"
   status = 301
 
 [[redirects]]
-  from = "/Terms of Service.html"
+  from = "/Terms%20of%20Service.html"
   to = "/terms.html"
   status = 301
 
 [[redirects]]
-  from = "/Landing Page.html"
+  from = "/Landing%20Page.html"
   to = "/"
   status = 301
 
