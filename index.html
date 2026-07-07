@@ -77,55 +77,13 @@
       content: ""; flex: 0 0 90px; height: 1px;
     }
     .services-row-label::after { background: linear-gradient(90deg, rgba(38,169,255,0.5), transparent); }
-    .services-row { display: grid; gap: 14px; grid-template-columns: repeat(7, 1fr); }
+    .services-row { display: grid; gap: 14px; grid-template-columns: repeat(4, 1fr); }
     .service-tile {
       align-items: center; display: flex; flex-direction: column; gap: 14px; justify-content: flex-start;
       padding: 26px 12px 22px; text-align: center;
     }
     .service-tile .icon-chip { margin-bottom: 0; }
     .service-tile span { font-family: var(--font-head); font-size: 14px; font-weight: 600; line-height: 1.35; }
-
-    /* Stats bar */
-    .stats-bar {
-      background: rgba(6,16,29,0.6);
-      border-top: 1px solid var(--glass-border);
-      border-bottom: 1px solid var(--glass-border);
-      -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-      padding: 40px 0;
-    }
-    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-    .stat-item { border-right: 1px solid var(--line); padding: 0 32px; text-align: center; }
-    .stat-item:first-child { padding-left: 0; }
-    .stat-item:last-child  { border-right: none; padding-right: 0; }
-    .stat-number {
-      color: var(--text); display: block;
-      font-family: var(--font-head); font-size: clamp(26px, 3.6vw, 40px); font-weight: 700;
-      line-height: 1.05; margin-bottom: 6px;
-    }
-    .stat-number span { color: var(--accent-bright); }
-    .stat-label { color: var(--muted); font-size: 13px; font-weight: 500; }
-
-    /* Industries strip */
-    .logo-strip { border-bottom: 1px solid var(--line); overflow: hidden; padding: 26px 0; }
-    .logo-strip-label {
-      color: var(--muted); font-size: 11px; font-weight: 700;
-      letter-spacing: 0.12em; margin-bottom: 18px; text-align: center; text-transform: uppercase;
-    }
-    .logo-track-wrap { overflow: hidden; position: relative; }
-    .logo-track-wrap::before, .logo-track-wrap::after {
-      content: ""; height: 100%; pointer-events: none; position: absolute; top: 0; width: 80px; z-index: 2;
-    }
-    .logo-track-wrap::before { background: linear-gradient(to right, var(--bg-main) 0%, transparent); left: 0; }
-    .logo-track-wrap::after  { background: linear-gradient(to left, var(--bg-main) 0%, transparent); right: 0; }
-    .logo-track { animation: scrollLogos 30s linear infinite; display: flex; gap: 60px; width: max-content; }
-    .logo-track:hover { animation-play-state: paused; }
-    .logo-item {
-      align-items: center; color: rgba(184,196,214,0.5); display: flex;
-      font-family: var(--font-head); font-size: 15px; font-weight: 600;
-      gap: 8px; letter-spacing: 0.04em; white-space: nowrap;
-    }
-    .logo-item .logo-dot { background: var(--accent); border-radius: 50%; height: 6px; opacity: 0.7; width: 6px; }
-    @keyframes scrollLogos { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     /* Detailed services */
     .services-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
@@ -168,19 +126,6 @@
     .why-card h3 { font-size: 16px; }
     .why-card p  { color: var(--muted); font-size: 13px; line-height: 1.6; }
 
-    /* How we partner */
-    .reviews-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
-    .review-card { display: flex; flex-direction: column; padding: 26px; }
-    .review-card > p { color: #D8E6F5; flex: 1; font-size: 14px; font-style: italic; line-height: 1.65; margin-bottom: 18px; }
-    .reviewer { align-items: center; display: flex; gap: 12px; }
-    .reviewer strong { display: block; font-size: 13px; }
-    .reviewer span   { color: var(--muted); font-size: 12px; }
-    .result-badge {
-      background: rgba(19,157,255,0.1); border: 1px solid rgba(38,169,255,0.3);
-      border-radius: 999px; color: var(--accent-pale); font-size: 11px; font-weight: 700;
-      margin-left: auto; padding: 3px 9px; white-space: nowrap;
-    }
-
     /* Contact section */
     .contact-wrap { display: grid; gap: 48px; grid-template-columns: 1fr 520px; align-items: center; }
     .contact-copy h2 { margin-bottom: 16px; }
@@ -215,16 +160,13 @@
       .services-grid { grid-template-columns: 1fr 1fr; }
       .steps-grid { gap: 40px; grid-template-columns: 1fr; }
       .steps-grid::before { display: none; }
-      .why-grid, .reviews-grid { grid-template-columns: 1fr; }
-      .stats-grid { gap: 24px; grid-template-columns: repeat(2, 1fr); }
-      .stat-item { border-right: none; padding: 0; }
+      .why-grid { grid-template-columns: 1fr; }
       .contact-wrap { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
       .hero { padding: 116px 0 32px; }
       .services-row { grid-template-columns: 1fr 1fr; }
       .services-grid { grid-template-columns: 1fr; }
-      .stats-grid { grid-template-columns: 1fr 1fr; }
       .hero-trust { gap: 12px; }
       .step { padding: 0 12px; }
       .contact-form-card { padding: 22px 16px; }
@@ -235,8 +177,6 @@
       .hero-badge { font-size: 9px; padding: 6px 10px; }
       .hero-actions { flex-direction: column; }
       .hero-actions .btn-primary, .hero-actions .btn-ghost { justify-content: center; width: 100%; }
-      .stats-grid { grid-template-columns: 1fr; }
-      .stat-item { text-align: left; }
       .services-row { grid-template-columns: 1fr; }
     }
   </style>
@@ -269,8 +209,8 @@
       <ul class="nav-links">
         <li><a href="/" aria-current="page">Home</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="frontdesk.html">AI Front Desk</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
         <li><a href="faq.html">Insights</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -286,8 +226,8 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="frontdesk.html">AI Front Desk</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
       <li><a href="faq.html">Insights</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -366,62 +306,10 @@
           <div class="icon-chip"><svg><use href="#i-sparkles"/></svg></div>
           <span>AI Search Visibility (GEO/AEO)</span>
         </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── Stats bar ── -->
-  <div class="stats-bar">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-number">Select</span>
-          <span class="stat-label">Partner roster</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">IE</span>
-          <span class="stat-label">Inland Empire focus</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">Hands-<span>On</span></span>
-          <span class="stat-label">System building</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">30</span>
-          <span class="stat-label">Day roadmap builds</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── Industries strip ── -->
-  <div class="logo-strip">
-    <div class="container">
-      <p class="logo-strip-label">Partnering with a select set of local businesses across the Inland Empire and Southern California</p>
-    </div>
-    <div class="logo-track-wrap">
-      <div class="logo-track" id="logoTrack">
-        <span class="logo-item"><span class="logo-dot"></span>Home Services</span>
-        <span class="logo-item"><span class="logo-dot"></span>Dental Practices</span>
-        <span class="logo-item"><span class="logo-dot"></span>Med Spas</span>
-        <span class="logo-item"><span class="logo-dot"></span>Roofing &amp; Trades</span>
-        <span class="logo-item"><span class="logo-dot"></span>Fitness Studios</span>
-        <span class="logo-item"><span class="logo-dot"></span>Local Service Brands</span>
-        <span class="logo-item"><span class="logo-dot"></span>Professional Services</span>
-        <span class="logo-item"><span class="logo-dot"></span>Appointment-Based Businesses</span>
-        <span class="logo-item"><span class="logo-dot"></span>Founder-Led Teams</span>
-        <span class="logo-item"><span class="logo-dot"></span>Inland Empire Operators</span>
-        <!-- duplicated for seamless scroll -->
-        <span class="logo-item"><span class="logo-dot"></span>Home Services</span>
-        <span class="logo-item"><span class="logo-dot"></span>Dental Practices</span>
-        <span class="logo-item"><span class="logo-dot"></span>Med Spas</span>
-        <span class="logo-item"><span class="logo-dot"></span>Roofing &amp; Trades</span>
-        <span class="logo-item"><span class="logo-dot"></span>Fitness Studios</span>
-        <span class="logo-item"><span class="logo-dot"></span>Local Service Brands</span>
-        <span class="logo-item"><span class="logo-dot"></span>Professional Services</span>
-        <span class="logo-item"><span class="logo-dot"></span>Appointment-Based Businesses</span>
-        <span class="logo-item"><span class="logo-dot"></span>Founder-Led Teams</span>
-        <span class="logo-item"><span class="logo-dot"></span>Inland Empire Operators</span>
+        <a href="frontdesk.html" class="service-tile glass-card glass-lift reveal reveal-d3">
+          <div class="icon-chip"><svg><use href="#i-bot"/></svg></div>
+          <span>AI Front Desk</span>
+        </a>
       </div>
     </div>
   </div>
@@ -493,6 +381,15 @@
           <div class="service-results">
             <span class="result-pill">Emerging channel</span>
             <span class="result-pill">Future-ready search</span>
+          </div>
+        </div>
+        <div class="service-card glass-card glass-lift reveal reveal-d2">
+          <div class="icon-chip"><svg><use href="#i-bot"/></svg></div>
+          <h3>AI Front Desk</h3>
+          <p>A 24/7 missed-call receptionist for local service businesses. It answers inbound calls, captures job details, handles common questions, and routes urgent leads.</p>
+          <div class="service-results">
+            <span class="result-pill">Missed-call capture</span>
+            <span class="result-pill">Live demo line</span>
           </div>
         </div>
       </div>
@@ -583,49 +480,6 @@
     </div>
   </section>
 
-  <!-- ── Work / How we partner ── -->
-  <section class="section-pad" id="work">
-    <span id="results" style="position:absolute;top:0"></span>
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow">How we partner</p>
-        <h2>Built for a Select Roster.<br>Not a Volume Model.</h2>
-      </div>
-      <div class="reviews-grid">
-        <div class="review-card glass-card glass-lift reveal">
-          <p>"We are intentionally partnering with a small number of businesses while we tighten the playbook, prove the systems, and stay close to the work."</p>
-          <div class="reviewer">
-            <div>
-              <strong>Select Partnerships</strong>
-              <span>Current operating model</span>
-            </div>
-            <span class="result-badge">Hands-on</span>
-          </div>
-        </div>
-        <div class="review-card glass-card glass-lift reveal reveal-d1">
-          <p>"Our focus is building practical systems first: better intake, stronger visibility, cleaner reporting, and follow-up that does not depend on memory alone."</p>
-          <div class="reviewer">
-            <div>
-              <strong>System-First Delivery</strong>
-              <span>What clients can expect</span>
-            </div>
-            <span class="result-badge">CRM + Make</span>
-          </div>
-        </div>
-        <div class="review-card glass-card glass-lift reveal reveal-d2">
-          <p>"The near-term goal is to earn a reputation for thoughtful execution, honest communication, and a tighter operating system for Inland Empire businesses that want real partnership."</p>
-          <div class="reviewer">
-            <div>
-              <strong>2026 Agency Goal</strong>
-              <span>Quality over volume</span>
-            </div>
-            <span class="result-badge">Local focus</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── Contact ── -->
   <section class="section-pad section-tint" id="contact">
     <div class="container">
@@ -658,6 +512,22 @@
             <div class="form-group">
               <label for="company">Business name *</label>
               <input id="company" type="text" autocomplete="organization" placeholder="Smith Consulting LLC" required />
+            </div>
+            <div class="form-group">
+              <label for="businessType">Business type *</label>
+              <select id="businessType" required>
+                <option value="">— Select business type —</option>
+                <option>Landscaping</option>
+                <option>Barbershop</option>
+                <option>Car Detailing</option>
+                <option>Handyman/Restoration</option>
+                <option>Home Services</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group" id="businessTypeOtherGroup" style="display:none">
+              <label for="businessTypeOther">Tell us your business type *</label>
+              <input id="businessTypeOther" type="text" placeholder="e.g. Pool Cleaning" />
             </div>
             <div class="form-row">
               <div class="form-group">
@@ -694,6 +564,9 @@
                 </div>
                 <div class="svc-card" data-svc="AI Search Visibility (GEO/AEO)">
                   <span class="svc-check-box"></span>AI Search Visibility
+                </div>
+                <div class="svc-card" data-svc="AI Front Desk">
+                  <span class="svc-check-box"></span>AI Front Desk
                 </div>
               </div>
               <p id="svcError" style="color:var(--accent-pale);font-size:12px;margin-top:6px;display:none">Please select at least one service.</p>
@@ -775,14 +648,14 @@
             <li><a href="#services">Website Design &amp; CRO</a></li>
             <li><a href="#services">AI Growth Strategy</a></li>
             <li><a href="#services">AI Search Visibility (GEO/AEO)</a></li>
+            <li><a href="frontdesk.html">AI Front Desk</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="tools.html">Free Tools</a></li>
+                <li><a href="tools.html">Free Tools</a></li>
             <li><a href="faq.html">Insights / FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -843,7 +716,7 @@
 
       // High-value service interests (+5 each, max +10)
       if (Array.isArray(services)) {
-        const highValue = ["Paid Ads (Meta / Google / TikTok)", "AI Growth Strategy"];
+        const highValue = ["Paid Ads (Meta / Google / TikTok)", "AI Growth Strategy", "AI Front Desk"];
         const hits = services.filter(s => highValue.includes(s)).length;
         score += Math.min(hits * 5, 10);
       }
@@ -857,7 +730,7 @@
       return Math.min(score, 100);
     }
 
-    async function submitToMake({ firstName, lastName, company, email, phone, services, budget, goal, honeypot }) {
+    async function submitToMake({ firstName, lastName, company, businessType, email, phone, services, budget, goal, honeypot }) {
       if (!MAKE_WEBHOOK_URL || MAKE_WEBHOOK_URL === "YOUR_MAKE_WEBHOOK_URL") {
         console.warn("Make.com webhook not configured — form submission not sent.");
         return { ok: false, fallback: true };
@@ -871,6 +744,7 @@
             firstName,
             lastName,
             company,
+            businessType,
             email,
             phone,
             services: Array.isArray(services) ? services : [services].filter(Boolean),
@@ -899,6 +773,16 @@
       return [...document.querySelectorAll(".svc-card.selected")].map(c => c.dataset.svc);
     }
 
+    /* ── Business type "Other" toggle ── */
+    const businessTypeSelect     = document.getElementById("businessType");
+    const businessTypeOtherGroup = document.getElementById("businessTypeOtherGroup");
+    const businessTypeOtherInput = document.getElementById("businessTypeOther");
+    businessTypeSelect.addEventListener("change", () => {
+      const isOther = businessTypeSelect.value === "Other";
+      businessTypeOtherGroup.style.display = isOther ? "block" : "none";
+      if (!isOther) businessTypeOtherInput.value = "";
+    });
+
     /* ── Lead form ── */
     const form        = document.getElementById("leadForm");
     const formSuccess = document.getElementById("formSuccess");
@@ -911,16 +795,19 @@
       formError.style.display = "none";
       svcError.style.display  = "none";
 
-      const firstName = document.getElementById("firstName").value.trim();
-      const lastName  = document.getElementById("lastName").value.trim();
-      const company   = document.getElementById("company").value.trim();
-      const email     = document.getElementById("email").value.trim();
-      const phone     = document.getElementById("phone").value.trim();
-      const services  = getSelectedServices();
+      const firstName        = document.getElementById("firstName").value.trim();
+      const lastName         = document.getElementById("lastName").value.trim();
+      const company          = document.getElementById("company").value.trim();
+      const businessTypeSel  = document.getElementById("businessType").value;
+      const businessTypeOther = document.getElementById("businessTypeOther").value.trim();
+      const email            = document.getElementById("email").value.trim();
+      const phone            = document.getElementById("phone").value.trim();
+      const services         = getSelectedServices();
 
       const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       const phoneValid = /^[\d\s\-\+\(\)\.]{7,20}$/.test(phone);
-      if (!firstName || !lastName || !company || !email || !phone || !emailValid || !phoneValid) {
+      const businessTypeValid = businessTypeSel && (businessTypeSel !== "Other" || businessTypeOther);
+      if (!firstName || !lastName || !company || !businessTypeValid || !email || !phone || !emailValid || !phoneValid) {
         formError.style.display = "block";
         return;
       }
@@ -930,6 +817,7 @@
         return;
       }
 
+      const businessType = businessTypeSel === "Other" ? businessTypeOther : businessTypeSel;
       const budget   = document.getElementById("budget").value;
       const goal     = document.getElementById("goal").value.trim();
       const honeypot = document.getElementById("hp_field").value;
@@ -937,7 +825,7 @@
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending…";
 
-      const result = await submitToMake({ firstName, lastName, company, email, phone, services, budget, goal, honeypot });
+      const result = await submitToMake({ firstName, lastName, company, businessType, email, phone, services, budget, goal, honeypot });
 
       if (result.ok || result.fallback) {
         form.style.display        = "none";

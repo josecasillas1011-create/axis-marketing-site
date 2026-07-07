@@ -33,6 +33,11 @@
   to = "/"
   status = 301
 
+[[redirects]]
+  from = "/frontdesk"
+  to = "/frontdesk.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
