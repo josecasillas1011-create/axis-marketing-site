@@ -80,21 +80,40 @@
     .services-row { display: grid; gap: 14px; grid-template-columns: repeat(4, 1fr); }
     .service-tile {
       align-items: center; display: flex; flex-direction: column; gap: 14px; justify-content: flex-start;
+      appearance: none; -webkit-appearance: none;
+      border: 1px solid var(--glass-border); color: var(--text); cursor: pointer; font-family: inherit;
       padding: 26px 12px 22px; text-align: center;
+      width: 100%;
     }
     .service-tile .icon-chip { margin-bottom: 0; }
     .service-tile span { font-family: var(--font-head); font-size: 14px; font-weight: 600; line-height: 1.35; }
-
-    /* Detailed services */
-    .services-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
-    .service-card { padding: 28px; }
-    .service-card h3 { font-size: 17px; margin-bottom: 10px; }
-    .service-card p  { color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .service-tile.is-active {
+      border-color: var(--glass-border-hi);
+      box-shadow: 0 24px 60px rgba(0,2,8,0.65), 0 0 30px rgba(19,157,255,0.26), inset 0 1px 0 var(--highlight);
+      transform: translateY(-4px);
+    }
+    .service-detail-panel {
+      display: grid; grid-template-rows: 0fr;
+      margin: 18px auto 0; max-width: 820px; opacity: 0; overflow: hidden;
+      transition: grid-template-rows 0.28s ease, opacity 0.22s ease, margin-top 0.22s ease;
+    }
+    .service-detail-panel.open { grid-template-rows: 1fr; margin-top: 22px; opacity: 1; }
+    .service-detail-inner { min-height: 0; }
+    .service-detail-content {
+      align-items: flex-start; display: grid; gap: 20px; grid-template-columns: auto 1fr;
+      padding: 28px;
+    }
+    .service-detail-content .icon-chip { margin-bottom: 0; }
+    .service-detail-copy h3 { font-size: 22px; margin-bottom: 8px; }
+    .service-detail-copy p { color: var(--muted); font-size: 15px; line-height: 1.68; }
     .service-results { align-items: center; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
     .result-pill {
       background: rgba(19,157,255,0.1); border: 1px solid rgba(38,169,255,0.3);
       border-radius: 999px; color: var(--accent-pale); font-size: 11px; font-weight: 700; padding: 3px 10px;
     }
+    .service-detail-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .service-detail-link { color: var(--accent-bright); font-size: 14px; font-weight: 800; }
+    .service-detail-link:hover { text-decoration: underline; }
 
     /* Steps */
     .steps-mark-bg {
@@ -157,7 +176,6 @@
       .growth-visual { min-height: 340px; }
       .gv-render { width: min(420px, 82vw); }
       .services-row { grid-template-columns: repeat(3, 1fr); }
-      .services-grid { grid-template-columns: 1fr 1fr; }
       .steps-grid { gap: 40px; grid-template-columns: 1fr; }
       .steps-grid::before { display: none; }
       .why-grid { grid-template-columns: 1fr; }
@@ -166,7 +184,7 @@
     @media (max-width: 600px) {
       .hero { padding: 116px 0 32px; }
       .services-row { grid-template-columns: 1fr 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
+      .service-detail-content { grid-template-columns: 1fr; padding: 22px 18px; }
       .hero-trust { gap: 12px; }
       .step { padding: 0 12px; }
       .contact-form-card { padding: 22px 16px; }
@@ -274,122 +292,53 @@
   </section>
 
   <!-- ── Services row (mockup) ── -->
-  <div class="services-row-wrap">
+  <section class="services-row-wrap" id="services">
     <div class="container">
       <div class="services-row-label reveal">Our Services</div>
       <div class="services-row">
-        <a href="#services" class="service-tile glass-card glass-lift reveal">
+        <button type="button" class="service-tile glass-card glass-lift reveal" data-service="paid" aria-expanded="false" aria-controls="serviceDetailPanel">
           <div class="icon-chip"><svg><use href="#i-megaphone"/></svg></div>
           <span>Paid Advertising</span>
-        </a>
-        <a href="#services" class="service-tile glass-card glass-lift reveal reveal-d1">
+        </button>
+        <button type="button" class="service-tile glass-card glass-lift reveal reveal-d1" data-service="seo" aria-expanded="false" aria-controls="serviceDetailPanel">
           <div class="icon-chip"><svg><use href="#i-search"/></svg></div>
           <span>SEO &amp; Local Search</span>
-        </a>
-        <a href="#services" class="service-tile glass-card glass-lift reveal reveal-d1">
+        </button>
+        <button type="button" class="service-tile glass-card glass-lift reveal reveal-d1" data-service="social" aria-expanded="false" aria-controls="serviceDetailPanel">
           <div class="icon-chip"><svg><use href="#i-thumbs"/></svg></div>
           <span>Social Media Management</span>
-        </a>
-        <a href="#services" class="service-tile glass-card glass-lift reveal reveal-d2">
+        </button>
+        <button type="button" class="service-tile glass-card glass-lift reveal reveal-d2" data-service="email" aria-expanded="false" aria-controls="serviceDetailPanel">
           <div class="icon-chip"><svg><use href="#i-mail"/></svg></div>
           <span>Email &amp; SMS Marketing</span>
-        </a>
-        <a href="#services" class="service-tile glass-card glass-lift reveal reveal-d2">
+        </button>
+        <button type="button" class="service-tile glass-card glass-lift reveal reveal-d2" data-service="web" aria-expanded="false" aria-controls="serviceDetailPanel">
           <div class="icon-chip"><svg><use href="#i-monitor"/></svg></div>
           <span>Website Design &amp; CRO</span>
-        </a>
-        <a href="#services" class="service-tile glass-card glass-lift reveal reveal-d3">
+        </button>
+        <button type="button" class="service-tile glass-card glass-lift reveal reveal-d3" data-service="strategy" aria-expanded="false" aria-controls="serviceDetailPanel">
           <div class="icon-chip"><svg><use href="#i-brain"/></svg></div>
           <span>AI Growth Strategy</span>
-        </a>
-        <a href="#services" class="service-tile glass-card glass-lift reveal reveal-d3">
+        </button>
+        <button type="button" class="service-tile glass-card glass-lift reveal reveal-d3" data-service="geo" aria-expanded="false" aria-controls="serviceDetailPanel">
           <div class="icon-chip"><svg><use href="#i-sparkles"/></svg></div>
           <span>AI Search Visibility (GEO/AEO)</span>
-        </a>
-        <a href="frontdesk.html" class="service-tile glass-card glass-lift reveal reveal-d3">
+        </button>
+        <button type="button" class="service-tile glass-card glass-lift reveal reveal-d3" data-service="frontdesk" aria-expanded="false" aria-controls="serviceDetailPanel">
           <div class="icon-chip"><svg><use href="#i-bot"/></svg></div>
           <span>AI Front Desk</span>
-        </a>
+        </button>
       </div>
-    </div>
-  </div>
-
-  <!-- ── Services (detail) ── -->
-  <section class="section-pad section-tint" id="services">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow">What we do</p>
-        <h2>AI-Enabled Services That<br>Support Smarter Growth</h2>
-        <p>We use automation where it adds leverage, but we stay close to the strategy, messaging, and numbers. The goal is cleaner systems, better follow-up, and more confident decision-making.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card glass-card glass-lift reveal">
-          <div class="icon-chip"><svg><use href="#i-megaphone"/></svg></div>
-          <h3>Paid Advertising</h3>
-          <p>Meta, Google, and TikTok campaigns built around realistic local growth goals. We focus on tracking, testing, and steady improvement instead of volume for volume's sake.</p>
-          <div class="service-results">
-            <span class="result-pill">Tracking-first</span>
-            <span class="result-pill">Pilot-ready</span>
-          </div>
-        </div>
-        <div class="service-card glass-card glass-lift reveal reveal-d1">
-          <div class="icon-chip"><svg><use href="#i-search"/></svg></div>
-          <h3>SEO &amp; Local Search</h3>
-          <p>We help local businesses strengthen Google Business Profile visibility, service-page structure, local authority signals, and city-level search coverage.</p>
-          <div class="service-results">
-            <span class="result-pill">Local search focus</span>
-          </div>
-        </div>
-        <div class="service-card glass-card glass-lift reveal reveal-d2">
-          <div class="icon-chip"><svg><use href="#i-thumbs"/></svg></div>
-          <h3>Social Media Management</h3>
-          <p>Content planning and channel support built to make your business look credible, active, and easy to trust across the platforms that matter most to your buyers.</p>
-          <div class="service-results">
-            <span class="result-pill">Content systems</span>
-          </div>
-        </div>
-        <div class="service-card glass-card glass-lift reveal">
-          <div class="icon-chip"><svg><use href="#i-mail"/></svg></div>
-          <h3>Email &amp; SMS Marketing</h3>
-          <p>Lead follow-up, nurture, and re-engagement sequences designed to make sure interested prospects do not get lost between first contact and booked conversation.</p>
-          <div class="service-results">
-            <span class="result-pill">Nurture flows</span>
-            <span class="result-pill">Operational follow-up</span>
-          </div>
-        </div>
-        <div class="service-card glass-card glass-lift reveal reveal-d1">
-          <div class="icon-chip"><svg><use href="#i-monitor"/></svg></div>
-          <h3>Website Design &amp; CRO</h3>
-          <p>Conversion-focused landing pages and site improvements that clarify the offer, reduce friction, and route every lead into a trackable follow-up process.</p>
-          <div class="service-results">
-            <span class="result-pill">Conversion tracking</span>
-          </div>
-        </div>
-        <div class="service-card glass-card glass-lift reveal reveal-d2">
-          <div class="icon-chip"><svg><use href="#i-brain"/></svg></div>
-          <h3>AI Growth Strategy</h3>
-          <p>We design practical internal systems for qualification, reporting, follow-up, and decision support so growth work becomes more repeatable and less reactive.</p>
-          <div class="service-results">
-            <span class="result-pill">Workflow design</span>
-            <span class="result-pill">Intent scoring</span>
-          </div>
-        </div>
-        <div class="service-card glass-card glass-lift reveal reveal-d1">
-          <div class="icon-chip"><svg><use href="#i-sparkles"/></svg></div>
-          <h3>AI Search Visibility (GEO/AEO)</h3>
-          <p>We help businesses prepare for AI-assisted discovery with clearer entity signals, stronger local content, and structured pages that support modern search behavior.</p>
-          <div class="service-results">
-            <span class="result-pill">Emerging channel</span>
-            <span class="result-pill">Future-ready search</span>
-          </div>
-        </div>
-        <div class="service-card glass-card glass-lift reveal reveal-d2">
-          <div class="icon-chip"><svg><use href="#i-bot"/></svg></div>
-          <h3>AI Front Desk</h3>
-          <p>A 24/7 missed-call receptionist for local service businesses. It answers inbound calls, captures job details, handles common questions, and routes urgent leads.</p>
-          <div class="service-results">
-            <span class="result-pill">Missed-call capture</span>
-            <span class="result-pill">Live demo line</span>
+      <div class="service-detail-panel" id="serviceDetailPanel" aria-live="polite">
+        <div class="service-detail-inner">
+          <div class="service-detail-content glass-card">
+            <div class="icon-chip" id="serviceDetailIcon" aria-hidden="true"></div>
+            <div class="service-detail-copy">
+              <h3 id="serviceDetailTitle"></h3>
+              <p id="serviceDetailText"></p>
+              <div class="service-results" id="serviceDetailPills"></div>
+              <div class="service-detail-actions" id="serviceDetailActions"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -696,6 +645,116 @@
        Make.com webhook — lead pipeline (Make.com → Supabase)
     ──────────────────────────────────────────────────────────────── */
     const MAKE_WEBHOOK_URL = "https://hook.us2.make.com/4s7yesdxybsh7nwvek8tgjtf63gkaa1c";
+
+    const serviceDetails = {
+      paid: {
+        icon: "i-megaphone",
+        title: "Paid Advertising",
+        text: "Meta, Google, and TikTok campaigns built around realistic local growth goals. We focus on tracking, testing, and steady improvement instead of volume for volume's sake.",
+        pills: ["Tracking-first", "Pilot-ready"]
+      },
+      seo: {
+        icon: "i-search",
+        title: "SEO & Local Search",
+        text: "We help local businesses strengthen Google Business Profile visibility, service-page structure, local authority signals, and city-level search coverage.",
+        pills: ["Local search focus"]
+      },
+      social: {
+        icon: "i-thumbs",
+        title: "Social Media Management",
+        text: "Content planning and channel support built to make your business look credible, active, and easy to trust across the platforms that matter most to your buyers.",
+        pills: ["Content systems"]
+      },
+      email: {
+        icon: "i-mail",
+        title: "Email & SMS Marketing",
+        text: "Lead follow-up, nurture, and re-engagement sequences designed to make sure interested prospects do not get lost between first contact and booked conversation.",
+        pills: ["Nurture flows", "Operational follow-up"]
+      },
+      web: {
+        icon: "i-monitor",
+        title: "Website Design & CRO",
+        text: "Conversion-focused landing pages and site improvements that clarify the offer, reduce friction, and route every lead into a trackable follow-up process.",
+        pills: ["Conversion tracking"]
+      },
+      strategy: {
+        icon: "i-brain",
+        title: "AI Growth Strategy",
+        text: "We design practical internal systems for qualification, reporting, follow-up, and decision support so growth work becomes more repeatable and less reactive.",
+        pills: ["Workflow design", "Intent scoring"]
+      },
+      geo: {
+        icon: "i-sparkles",
+        title: "AI Search Visibility (GEO/AEO)",
+        text: "We help businesses prepare for AI-assisted discovery with clearer entity signals, stronger local content, and structured pages that support modern search behavior.",
+        pills: ["Emerging channel", "Future-ready search"]
+      },
+      frontdesk: {
+        icon: "i-bot",
+        title: "AI Front Desk",
+        text: "A 24/7 missed-call receptionist for local service businesses. It answers inbound calls, captures job details, handles common questions, and routes urgent leads.",
+        pills: ["Missed-call capture", "Live demo line"],
+        action: { href: "/frontdesk", label: "View AI Front Desk demo page ->" }
+      }
+    };
+
+    (function initServiceDetails() {
+      const tiles = [...document.querySelectorAll(".service-tile[data-service]")];
+      const panel = document.getElementById("serviceDetailPanel");
+      const icon = document.getElementById("serviceDetailIcon");
+      const title = document.getElementById("serviceDetailTitle");
+      const text = document.getElementById("serviceDetailText");
+      const pills = document.getElementById("serviceDetailPills");
+      const actions = document.getElementById("serviceDetailActions");
+      if (!tiles.length || !panel || !icon || !title || !text || !pills || !actions) return;
+
+      let activeService = "";
+
+      function closePanel() {
+        activeService = "";
+        panel.classList.remove("open");
+        tiles.forEach(tile => {
+          tile.classList.remove("is-active");
+          tile.setAttribute("aria-expanded", "false");
+        });
+      }
+
+      function openPanel(tile) {
+        const key = tile.dataset.service;
+        const detail = serviceDetails[key];
+        if (!detail) return;
+
+        if (activeService === key) {
+          closePanel();
+          return;
+        }
+
+        activeService = key;
+        tiles.forEach(item => {
+          const isActive = item === tile;
+          item.classList.toggle("is-active", isActive);
+          item.setAttribute("aria-expanded", isActive ? "true" : "false");
+        });
+
+        icon.innerHTML = `<svg><use href="#${detail.icon}"/></svg>`;
+        title.textContent = detail.title;
+        text.textContent = detail.text;
+        pills.innerHTML = detail.pills.map(pill => `<span class="result-pill">${pill}</span>`).join("");
+        actions.innerHTML = detail.action
+          ? `<a class="service-detail-link" href="${detail.action.href}">${detail.action.label}</a>`
+          : "";
+        panel.classList.add("open");
+      }
+
+      tiles.forEach(tile => {
+        tile.addEventListener("click", () => openPanel(tile));
+        tile.addEventListener("keydown", event => {
+          if (event.key !== "Enter" && event.key !== " " && event.key !== "Spacebar") return;
+          event.preventDefault();
+          openPanel(tile);
+        });
+      });
+    })();
 
     function calculateIntentScore({ services, budget, goal, phone }) {
       let score = 40; // baseline
