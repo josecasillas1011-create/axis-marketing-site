@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════
-   AXIS MARKETING — SHARED DESIGN SYSTEM
+   PAIRDEN — SHARED DESIGN SYSTEM
    Premium futuristic dark mode · near-black + electric blue glow
    Palette: bg #020711 · blue #139dff · bright #39C7FF · deep #006EE6
    ═══════════════════════════════════════════════════════════════════ */
@@ -168,8 +168,8 @@ section { position: relative; }
   backdrop-filter: blur(20px) saturate(140%);
   box-shadow: 0 8px 32px rgba(0,2,8,0.5), 0 0 20px rgba(19,157,255,0.08), inset 0 1px 0 var(--highlight);
 }
-.nav-logo { align-items: center; display: flex; }
-.nav-logo img { height: 48px; width: auto; }
+.nav-logo { align-items: center; display: flex; flex-shrink: 0; }
+.nav-logo img { height: 34px; max-width: 235px; object-fit: contain; width: auto; }
 .nav-links { align-items: center; display: flex; gap: 26px; list-style: none; }
 .nav-links a {
   color: var(--muted); font-size: 13px; font-weight: 700;
@@ -211,7 +211,7 @@ footer {
 }
 .footer-grid { display: grid; gap: 40px; grid-template-columns: 1.5fr 1fr 1fr; margin-bottom: 44px; }
 .footer-brand p { color: var(--muted); font-size: 13px; line-height: 1.65; margin-top: 14px; max-width: 280px; }
-.footer-wordmark { height: 46px; width: auto; margin-bottom: 6px; }
+.footer-wordmark { height: 34px; max-width: 280px; object-fit: contain; width: auto; margin-bottom: 6px; }
 .footer-contact { display: grid; gap: 6px; margin-top: 18px; }
 .footer-contact a { color: var(--muted); font-size: 13px; transition: color 0.15s; }
 .footer-contact a:hover { color: var(--accent-bright); }
@@ -299,7 +299,7 @@ footer {
   background: linear-gradient(135deg, rgba(19,157,255,0.2), rgba(19,157,255,0.05));
   border-bottom: 1px solid rgba(38,169,255,0.25);
 }
-.chat-header img { border-radius: 7px; height: 28px; width: 28px; }
+.chat-header img { height: 30px; object-fit: contain; width: 30px; }
 .chat-header-text strong { display: block; font-size: 14px; }
 .chat-header-text span { color: var(--accent-bright); font-size: 11px; font-weight: 600; }
 .chat-header-close { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 18px; margin-left: auto; padding: 2px 6px; }
@@ -375,7 +375,7 @@ footer {
 }
 .cta-band h2 { margin-bottom: 14px; }
 .cta-band > .container > p:not(.eyebrow) { color: var(--muted); font-size: 17px; line-height: 1.6; margin: 0 auto 36px; max-width: 540px; }
-.cta-wordmark { display: block; height: 52px; margin: 0 auto 28px; opacity: 0.92; width: auto; }
+.cta-wordmark { display: block; height: 76px; margin: 0 auto 28px; max-width: min(560px, 90vw); object-fit: contain; opacity: 0.96; width: auto; }
 .cta-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
 
 /* ── Tools (tools.html) ─────────────────────────────────────── */
@@ -492,6 +492,8 @@ footer {
   .doc { margin-top: 120px; }
   .nav { padding: 10px 12px 0; }
   .nav-mobile-menu { left: 12px; right: 12px; top: 84px; }
+  .nav-logo img { height: 30px; max-width: 205px; }
+  .cta-wordmark { height: 62px; max-width: 92vw; }
 }
 
 /* ── Reduced motion ─────────────────────────────────────────── */

@@ -1,4 +1,4 @@
-/* Axis Marketing — shared page behaviors (nav, reveal, scroll-top, smooth scroll, FAQ) */
+/* PAIRDEN — shared page behaviors (nav, reveal, scroll-top, smooth scroll, FAQ) */
 
 // Hamburger menu
 (function () {
