@@ -1,4 +1,4 @@
-# Netlify config for the Axis Marketing public site (static, no build step).
+# Netlify config for the PAIRDEN public site (static, no build step).
 # This repo's root IS the site root (index.html + the other .html pages live here).
 # Netlify automatically serves 404.html for unknown paths.
 
