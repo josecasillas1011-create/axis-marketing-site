@@ -7,20 +7,33 @@
   <meta name="description" content="A 24/7 AI receptionist for local service businesses that answers missed calls, captures job details, handles common questions, and helps route urgent leads." />
   <link rel="icon" type="image/png" href="assets/pairden-icon.png" />
   <meta name="theme-color" content="#020711" />
+  <link rel="canonical" href="https://axismarketingai.net/frontdesk" />
   <meta property="og:title" content="AI Front Desk for Local Service Businesses | PAIRDEN" />
   <meta property="og:description" content="Call the demo line and hear an AI receptionist capture a real local-service lead." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/pairden-social-card.png" />
+  <meta property="og:url" content="https://axismarketingai.net/frontdesk" />
+  <meta property="og:image" content="https://axismarketingai.net/assets/pairden-social-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AI Front Desk for Local Service Businesses | PAIRDEN" />
   <meta name="twitter:description" content="A 24/7 AI receptionist that helps local service businesses answer missed calls and capture job details." />
-  <meta name="twitter:image" content="assets/pairden-social-card.png" />
+  <meta name="twitter:image" content="https://axismarketingai.net/assets/pairden-social-card.png" />
   <meta name="robots" content="index, follow" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "PAIRDEN AI Receptionist",
+    "provider": { "@type": "Organization", "name": "PAIRDEN", "url": "https://axismarketingai.net/" },
+    "areaServed": ["Inland Empire", "Southern California"],
+    "serviceType": "AI receptionist and missed-call coverage for local service businesses",
+    "url": "https://axismarketingai.net/frontdesk"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     .frontdesk-hero {
@@ -329,16 +342,24 @@
       font-size: 14px;
       text-align: right;
     }
-    .recording-placeholder {
+    .demo-guide-card {
       align-content: center;
-      border-style: dashed;
       min-height: 100%;
       padding: 30px;
     }
+    .receptionist-pricing-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+    }
     .pricing-single {
-      margin: 0 auto;
-      max-width: 760px;
+      display: flex;
+      flex-direction: column;
       padding: 34px;
+    }
+    .pricing-single.featured {
+      border-color: var(--accent-bright);
+      box-shadow: 0 24px 70px rgba(0,2,8,0.68), 0 0 38px rgba(19,157,255,0.2), inset 0 1px 0 var(--highlight);
     }
     .pricing-head {
       align-items: start;
@@ -350,7 +371,7 @@
     .price {
       color: var(--accent-bright);
       font-family: var(--font-mono);
-      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      font-size: clamp(2rem, 4vw, 3.25rem);
       font-weight: 800;
       line-height: 0.95;
       white-space: nowrap;
@@ -391,6 +412,12 @@
       flex: 0 0 auto;
       font-weight: 800;
     }
+    .pricing-single .btn-primary,
+    .pricing-single .btn-ghost { margin-top: auto; width: 100%; }
+    .plan-limit { color: var(--muted); font-size: 12px; line-height: 1.55; margin: -10px 0 20px; }
+    .full-office-callout { margin: 22px auto 0; max-width: 860px; padding: 20px 24px; text-align: center; }
+    .full-office-callout p { color: var(--muted); font-size: 13px; line-height: 1.65; }
+    .full-office-callout a { color: var(--accent-bright); font-weight: 800; }
     .usage-note {
       border-top: 1px solid var(--line);
       color: var(--muted);
@@ -498,6 +525,8 @@
         display: grid;
         gap: 14px;
       }
+      .receptionist-pricing-grid { grid-template-columns: 1fr; }
+      .pricing-single { margin: 0 auto; max-width: 620px; width: 100%; }
       .price {
         white-space: normal;
       }
@@ -540,7 +569,7 @@
       .front-card,
       .workflow-step,
       .demo-test-card,
-      .recording-placeholder,
+      .demo-guide-card,
       .pricing-single,
       .contact-panel {
         padding: 20px 16px;
@@ -598,7 +627,7 @@
         <li><a href="#book">Contact</a></li>
       </ul>
       <a href="tel:+18406882967" class="btn-primary nav-cta">Call Demo -></a>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navMobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -627,16 +656,16 @@
             </div>
             <h1 class="reveal reveal-d1">Missed calls should not turn into <span class="grad-text">missed jobs.</span></h1>
             <p class="frontdesk-sub reveal reveal-d2">
-              PAIRDEN Front Desk answers when your team cannot - after hours, during lunch, on job sites, and on weekends. It captures caller details, answers common questions, and routes urgent leads before they move on.
+              PAIRDEN AI Receptionist covers after-hours, overflow, or every call. It answers approved questions, captures job details, can connect to booking, and routes urgent leads before they move on.
             </p>
             <div class="frontdesk-actions reveal reveal-d3">
               <a href="tel:+18406882967" class="btn-primary">Call the Live Demo -></a>
               <a href="https://cal.com/jose-c-upt1mi/axis-setup" class="btn-ghost">Book a Setup Call</a>
             </div>
             <div class="trust-strip reveal reveal-d3">
-              <div class="trust-chip"><span>✓</span>24/7 call pickup</div>
+              <div class="trust-chip"><span>✓</span>After-hours or 24/7</div>
               <div class="trust-chip"><span>✓</span>Built for local services</div>
-              <div class="trust-chip"><span>✓</span>No fake pricing promises</div>
+              <div class="trust-chip"><span>✓</span>English &amp; Spanish available</div>
               <div class="trust-chip"><span>✓</span>Human handoff path</div>
             </div>
           </div>
@@ -722,9 +751,7 @@
             <p>You receive the summary and call back, schedule, or follow up based on the caller's urgency.</p>
           </article>
         </div>
-        <p class="phase-note reveal">
-          Phase 1 stays intentionally simple. Deeper CRM, calendar, and SMS automations can be added after the call-capture offer is proven with real prospects.
-        </p>
+        <p class="phase-note reveal">Start with missed-call or after-hours coverage, then add calendar booking, SMS summaries, and deeper CRM workflows when the operating rules are confirmed.</p>
       </div>
     </section>
 
@@ -748,10 +775,16 @@
             <a href="tel:+18406882967" class="btn-primary">Call Demo Line -></a>
           </article>
 
-          <article class="recording-placeholder glass-card reveal reveal-d1">
+          <article class="demo-guide-card glass-card reveal reveal-d1">
             <div class="icon-chip"><svg><use href="#i-shield"/></svg></div>
-            <h3>Recording slot</h3>
-            <p>A clean recorded demo call belongs here after the final QA pass. Until then, the page stays honest and pushes people to the inbound demo line.</p>
+            <h3>Try more than one question</h3>
+            <ul class="feature-list">
+              <li>Ask whether a service is available in your city</li>
+              <li>Describe an urgent or after-hours situation</li>
+              <li>Ask for a price the agent has not been approved to quote</li>
+              <li>Interrupt, change details, or ask for a human</li>
+            </ul>
+            <p class="usage-note">The goal is not a scripted performance. Test whether the agent stays concise, captures the right details, and knows when to hand the call back to a person.</p>
           </article>
         </div>
       </div>
@@ -761,8 +794,8 @@
       <div class="container">
         <div class="section-header reveal">
           <p class="eyebrow">What is included</p>
-          <h2>The essentials your first<br>version needs.</h2>
-          <p>A practical starter layer: custom prompt, business knowledge, clear intake fields, and a handoff path your team can actually use.</p>
+          <h2>The essentials every<br>receptionist plan needs.</h2>
+          <p>Every tier is configured around your business knowledge, intake fields, service area, and a handoff path your team can actually use.</p>
         </div>
         <div class="include-grid">
           <article class="front-card glass-card glass-lift reveal">
@@ -802,30 +835,67 @@
     <section class="section-pad section-tint" id="pricing">
       <div class="container">
         <div class="section-header reveal">
-          <p class="eyebrow">Simple starter pricing</p>
-          <h2>Start with the call-capture layer.<br>Add deeper automation later.</h2>
-          <p>One offer, one job: answer the calls that would otherwise slip through.</p>
+          <p class="eyebrow">Receptionist plans</p>
+          <h2>Choose the Coverage Level<br>That Matches Your Call Volume.</h2>
+          <p>Start with after-hours coverage or put the complete 24/7 front-office layer in place.</p>
         </div>
-        <article class="pricing-single glass-card reveal">
-          <div class="pricing-head">
-            <div>
-              <p class="eyebrow">AI Front Desk</p>
-              <h3>24/7 call capture for local service businesses</h3>
+        <div class="receptionist-pricing-grid">
+          <article class="pricing-single glass-card reveal">
+            <div class="pricing-head">
+              <div><p class="eyebrow">Coverage</p><h3>After-Hours Guard</h3></div>
+              <div class="price">$197<small>/mo</small></div>
             </div>
-            <div class="price">$497<small>/mo</small></div>
-          </div>
-          <div class="setup-note">$297-$497 setup, optionally waived for early pilot partners.</div>
-          <ul class="feature-list">
-            <li>Custom AI receptionist setup</li>
-            <li>Business-specific prompt and knowledge base</li>
-            <li>Inbound call answering</li>
-            <li>Lead capture and summary</li>
-            <li>Urgent-call handoff rules</li>
-            <li>Monthly prompt tuning and QA</li>
-          </ul>
-          <a href="https://cal.com/jose-c-upt1mi/axis-setup" class="btn-primary">Book Setup Call -></a>
-          <p class="usage-note">Call minutes are either included up to an agreed cap or billed as a transparent usage pass-through. Final usage structure is confirmed before launch.</p>
-        </article>
+            <div class="setup-note">$250 one-time setup</div>
+            <p class="plan-limit">Approximately 200 receptionist minutes included each month.</p>
+            <ul class="feature-list">
+              <li>Answers nights, weekends, and overflow</li>
+              <li>You keep answering your normal daytime calls</li>
+              <li>Business-specific services and FAQs</li>
+              <li>Lead details and call summaries</li>
+              <li>Urgent-call handoff rules</li>
+            </ul>
+            <a href="https://cal.com/jose-c-upt1mi/axis-setup" class="btn-ghost">Choose After-Hours</a>
+          </article>
+
+          <article class="pricing-single glass-card featured reveal reveal-d1">
+            <div class="pricing-head">
+              <div><p class="eyebrow">Most popular</p><h3>Full 24/7 Receptionist</h3></div>
+              <div class="price">$397<small>/mo</small></div>
+            </div>
+            <div class="setup-note">$497 one-time setup</div>
+            <p class="plan-limit">Approximately 500 receptionist minutes included each month.</p>
+            <ul class="feature-list">
+              <li>Every inbound call answered 24/7</li>
+              <li>English and Spanish available</li>
+              <li>Approved pricing or estimate rules</li>
+              <li>Calendar booking when configured</li>
+              <li>Call summaries sent to your team</li>
+              <li>Monthly tuning and QA</li>
+            </ul>
+            <a href="https://cal.com/jose-c-upt1mi/axis-setup" class="btn-primary">Choose Full Receptionist</a>
+          </article>
+
+          <article class="pricing-single glass-card reveal reveal-d2">
+            <div class="pricing-head">
+              <div><p class="eyebrow">Busy lines</p><h3>High-Volume Receptionist</h3></div>
+              <div class="price">$797<small>/mo</small></div>
+            </div>
+            <div class="setup-note">$997 one-time setup</div>
+            <p class="plan-limit">Approximately 1,500 receptionist minutes included each month.</p>
+            <ul class="feature-list">
+              <li>Everything in Full Receptionist</li>
+              <li>Higher included call volume</li>
+              <li>Priority tuning and support</li>
+              <li>Custom call flows and routing</li>
+              <li>Usage alerts before overages</li>
+            </ul>
+            <a href="https://cal.com/jose-c-upt1mi/axis-setup" class="btn-ghost">Choose High Volume</a>
+          </article>
+        </div>
+        <p class="usage-note" style="max-width:760px;margin:22px auto 0;text-align:center">Additional receptionist minutes are $0.40 each. A capped 14-day trial may be available after the live demo and fit review.</p>
+        <div class="full-office-callout glass-card reveal">
+          <p>Need the website, booking, reviews, local SEO, and 24/7 receptionist together? <a href="/#plans">See the complete AI Front Office package for $997/month.</a></p>
+        </div>
       </div>
     </section>
 
@@ -866,20 +936,24 @@
             <div class="faq-a">It should not. The agent is instructed to avoid inventing pricing, timelines, guarantees, or policies. Pricing questions are routed to your team.</div>
           </div>
           <div class="faq-item glass-card">
-            <button class="faq-q">Can prospects type their number and get an instant call?<span class="faq-chevron">⌄</span></button>
-            <div class="faq-a">Not in this first version. For now, the safer test-drive path is inbound: they call the demo number themselves.</div>
+            <button class="faq-q">Can it answer in Spanish?<span class="faq-chevron">⌄</span></button>
+            <div class="faq-a">Yes. English and Spanish call handling can be configured around the same approved services, booking rules, and escalation path.</div>
           </div>
           <div class="faq-item glass-card">
             <button class="faq-q">Does this connect to my CRM?<span class="faq-chevron">⌄</span></button>
-            <div class="faq-a">The starter version can stay simple. CRM, calendar, and SMS automation can be added after the offer is validated and the intake fields are confirmed.</div>
+            <div class="faq-a">Yes, depending on the plan and your current tools. Calendar booking, contact creation, call summaries, and SMS handoffs are configured after the exact intake fields and operating rules are confirmed.</div>
           </div>
           <div class="faq-item glass-card">
-            <button class="faq-q">How fast can a demo be built?<span class="faq-chevron">⌄</span></button>
-            <div class="faq-a">A simple custom demo line can usually be prepared quickly once the business name, services, FAQs, escalation contact, and service area are known.</div>
+            <button class="faq-q">How fast can it go live?<span class="faq-chevron">⌄</span></button>
+            <div class="faq-a">Most receptionist systems can be configured and tested in 7–14 days once the business knowledge, forwarding choice, booking rules, and escalation contacts are complete.</div>
           </div>
           <div class="faq-item glass-card">
             <button class="faq-q">What do you need from me?<span class="faq-chevron">⌄</span></button>
             <div class="faq-a">Your business details, services, service area, hours, common questions, unavailable work, and the person who should receive urgent handoffs.</div>
+          </div>
+          <div class="faq-item glass-card">
+            <button class="faq-q">Does the caller know it is automated?<span class="faq-chevron">⌄</span></button>
+            <div class="faq-a">Yes. The opening is configured to disclose the automated assistant and any recording used for the call, followed by a concise business-specific greeting.</div>
           </div>
         </div>
       </div>
@@ -891,7 +965,7 @@
           <div class="book-copy reveal">
             <p class="eyebrow">Start with a demo line</p>
             <h2>Want a demo line with<br><span class="grad-text">your business name</span> on it?</h2>
-            <p>Send the business details and PAIRDEN can map the first version: voice, greeting, services, FAQ handling, and handoff rules.</p>
+            <p>Send the business details and PAIRDEN can map a personalized demo: voice, greeting, services, FAQ handling, booking rules, and human handoffs.</p>
             <div class="book-actions">
               <a href="https://cal.com/jose-c-upt1mi/axis-setup" class="btn-primary">Book Setup Call -></a>
               <a href="tel:+18406882967" class="btn-ghost">Call the Demo</a>
@@ -916,7 +990,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="assets/pairden-wordmark-white.png" alt="PAIRDEN" class="footer-wordmark" />
-          <p>People and AI working together to build clearer growth systems for a select roster of Inland Empire and Southern California businesses.</p>
+          <p>Websites, booking, reviews, missed-call follow-up, and AI phone answering for Inland Empire and Southern California service businesses.</p>
           <div class="footer-contact">
             <a href="mailto:jose@axismarketingai.net">jose@axismarketingai.net</a>
             <a href="tel:+18406882967">(840) 688-2967</a>
@@ -925,19 +999,21 @@
         <div class="footer-col">
           <h4>Services</h4>
           <ul>
-            <li><a class="current-service" href="/frontdesk">AI Front Desk</a></li>
-            <li><a href="/#services">Paid Advertising</a></li>
-            <li><a href="/#services">SEO &amp; Local Search</a></li>
-            <li><a href="/#services">Website Design &amp; CRO</a></li>
-            <li><a href="/#services">AI Growth Strategy</a></li>
+            <li><a class="current-service" href="/frontdesk">AI Receptionist</a></li>
+            <li><a href="/#services">Website + Google Presence</a></li>
+            <li><a href="/#services">Booking + Reminders</a></li>
+            <li><a href="/#services">Missed-Call Text-Back</a></li>
+            <li><a href="/#services">Review Engine</a></li>
+            <li><a href="/#services">Local SEO</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li><a href="/#about">About</a></li>
+            <li><a href="/#plans">Plans</a></li>
+            <li><a href="/#about">Why PAIRDEN</a></li>
             <li><a href="tools.html">Free Tools</a></li>
-            <li><a href="faq.html">Insights / FAQ</a></li>
+            <li><a href="faq.html">FAQ</a></li>
             <li><a href="#book">Contact</a></li>
           </ul>
         </div>
