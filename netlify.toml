@@ -6,6 +6,33 @@
   publish = "."
   command = ""
 
+# Preserve every path while permanently moving the former Axis domain to PAIRDEN.
+# Keep axismarketingai.net assigned to this Netlify site so these host-level
+# redirects continue working during the domain migration.
+[[redirects]]
+  from = "http://axismarketingai.net/*"
+  to = "https://pairden.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://axismarketingai.net/*"
+  to = "https://pairden.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.axismarketingai.net/*"
+  to = "https://pairden.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.axismarketingai.net/*"
+  to = "https://pairden.com/:splat"
+  status = 301
+  force = true
+
 # 301s from the old page filenames (with spaces) to the new clean URLs.
 # Paths with spaces must be URL-encoded (%20) in redirect rules.
 [[redirects]]
