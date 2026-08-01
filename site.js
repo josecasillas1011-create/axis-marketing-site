@@ -5,15 +5,25 @@
   const btn  = document.getElementById("navHamburger");
   const menu = document.getElementById("navMobileMenu");
   if (!btn || !menu) return;
-  btn.addEventListener("click", () => {
-    const open = menu.classList.toggle("open");
+  function setMenu(open) {
+    menu.classList.toggle("open", open);
     btn.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    menu.setAttribute("aria-hidden", open ? "false" : "true");
+  }
+  setMenu(false);
+  btn.addEventListener("click", () => {
+    setMenu(!menu.classList.contains("open"));
   });
   menu.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      menu.classList.remove("open");
-      btn.classList.remove("open");
-    });
+    a.addEventListener("click", () => setMenu(false));
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && menu.classList.contains("open")) {
+      setMenu(false);
+      btn.focus();
+    }
   });
 })();
 
@@ -55,11 +65,25 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 })();
 
 // FAQ accordion
-document.querySelectorAll(".faq-q").forEach(btn => {
+document.querySelectorAll(".faq-q").forEach((btn, index) => {
+  const item = btn.closest(".faq-item");
+  const answer = item && item.querySelector(".faq-a");
+  if (!item || !answer) return;
+  const answerId = answer.id || `faq-answer-${index + 1}`;
+  answer.id = answerId;
+  btn.setAttribute("aria-controls", answerId);
+  btn.setAttribute("aria-expanded", "false");
+
   btn.addEventListener("click", () => {
-    const item = btn.closest(".faq-item");
     const isOpen = item.classList.contains("open");
-    document.querySelectorAll(".faq-item.open").forEach(i => i.classList.remove("open"));
-    if (!isOpen) item.classList.add("open");
+    document.querySelectorAll(".faq-item.open").forEach(openItem => {
+      openItem.classList.remove("open");
+      const openButton = openItem.querySelector(".faq-q");
+      if (openButton) openButton.setAttribute("aria-expanded", "false");
+    });
+    if (!isOpen) {
+      item.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+    }
   });
 });
